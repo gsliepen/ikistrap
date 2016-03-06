@@ -1,0 +1,65 @@
+<script type="text/javascript" src="ikiwiki/jquery.min.js"></script>
+<script type="text/javascript" src="ikiwiki/login-selector/login-selector.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	selector.init(
+		'openid_identifier',
+		{
+			<TMPL_IF LOGIN_SELECTOR_OPENID>'openid': 1,</TMPL_IF>
+			<TMPL_IF LOGIN_SELECTOR_EMAILAUTH>'email': 1,</TMPL_IF>
+		},
+		'<TMPL_IF OTHERFORM>otherform</TMPL_IF>',
+		'<TMPL_VAR OTHERFORM_LABEL>'
+	);
+});
+</script>
+
+<form action="<TMPL_VAR CGIURL>" method="get" id="login_selector_form">
+	<div>
+		<script>
+		$('fieldset').append("<legend>Select login method</legend>");
+		</script>
+		
+		<input type="hidden" name="do" value="signin" />
+		<input type="hidden" name="action" value="verify" />
+		<div id="login_choice">
+			<div id="login_btns"></div>
+		</div>
+
+		<div id="login_input_area">
+		<TMPL_IF LOGIN_SELECTOR_OPENID>
+			<div>
+				<h3>OpenId login:</h3>
+				<label for="openid_identifier" class="block">Enter your OpenID:</label>
+				<input id="openid_identifier" name="openid_identifier" type="text" value="<TMPL_VAR ESCAPE=HTML OPENID_URL>"/>
+				<input id="openid_submit" type="submit" value="Login"/>
+			</div>
+		</TMPL_IF>
+		<TMPL_IF LOGIN_SELECTOR_EMAILAUTH>
+			<div>
+				<h3>Email login:</h3>
+				<label for="email_address" class="block">Enter your email address:</label>
+				<input id="email_address" name="Email_entry" type="text" value="<TMPL_VAR ESCAPE=HTML EMAIL_ADDRESS>"/>
+				<input id="email_submit" type="submit" value="Login"/>
+			</div>
+		</TMPL_IF>
+		</div>
+
+		<TMPL_IF LOGIN_ERROR>
+		<div class="error"><TMPL_VAR LOGIN_ERROR></div>
+		</TMPL_IF>
+		<TMPL_IF LOGIN_INFO>
+		<TMPL_VAR LOGIN_INFO>
+		</TMPL_IF>
+	</div>
+</form>
+
+<div id="otherform">
+<TMPL_IF OTHERFORM>
+<br />
+<noscript>
+<h3><TMPL_VAR OTHERFORM_LABEL> login:</h3>
+</noscript>
+</TMPL_IF>
+<TMPL_VAR OTHERFORM>
+</div>

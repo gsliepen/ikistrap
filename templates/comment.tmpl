@@ -1,0 +1,66 @@
+<TMPL_IF HTML5><article class="comment" id="<TMPL_VAR COMMENTID>">
+<TMPL_ELSE><div class="comment" id="<TMPL_VAR COMMENTID>"></TMPL_IF>
+
+<TMPL_IF COMMENTAUTHORAVATAR><div class="comment-avatar">
+<img src="<TMPL_VAR COMMENTAUTHORAVATAR>" alt="" />
+</div></TMPL_IF>
+
+<TMPL_IF HTML5><header class="comment-subject"><TMPL_ELSE><div class="comment-subject"></TMPL_IF>
+<TMPL_IF PERMALINK>
+<a href="<TMPL_VAR PERMALINK>"><TMPL_VAR TITLE></a>
+<TMPL_ELSE>
+<TMPL_VAR TITLE>
+</TMPL_IF>
+<TMPL_IF HTML5></header><TMPL_ELSE></div></TMPL_IF>
+
+<TMPL_IF HTML5><section class="inlinecontent"><TMPL_ELSE><div class="inlinecontent"></TMPL_IF>
+<TMPL_VAR CONTENT>
+<TMPL_IF HTML5></section><TMPL_ELSE></div></TMPL_IF>
+
+<TMPL_IF HTML5><header class="comment-header"><TMPL_ELSE><div class="comment-header"></TMPL_IF>
+<TMPL_IF COMMENTUSER>
+Comment by
+<TMPL_IF COMMENTOPENID>
+<span class="author" title="OpenID">
+<a href="<TMPL_VAR COMMENTOPENID>"><TMPL_VAR COMMENTAUTHOR></a>
+</span>
+<TMPL_ELSE>
+<span class="author" title="Signed in">
+<TMPL_IF COMMENTAUTHORURL>
+<a href="<TMPL_VAR COMMENTAUTHORURL>"><TMPL_VAR COMMENTAUTHOR></a>
+<TMPL_ELSE>
+<TMPL_VAR COMMENTAUTHOR>
+</TMPL_IF>
+</span>
+</TMPL_IF>
+<TMPL_ELSE>
+<TMPL_IF AUTHOR>
+Comment by
+<TMPL_IF COMMENTIP>
+<span class="author" title="Unauthenticated, from <TMPL_VAR COMMENTIP>">
+<TMPL_ELSE>
+<span class="author" title="Unauthenticated, from unknown IP address">
+</TMPL_IF>
+<TMPL_IF AUTHORURL>
+<a href="<TMPL_VAR AUTHORURL>"><TMPL_VAR AUTHOR></a>
+<TMPL_ELSE>
+<TMPL_VAR AUTHOR>
+</TMPL_IF>
+</TMPL_IF>
+</span>
+</TMPL_IF>
+&mdash; <TMPL_VAR CTIME>
+<TMPL_IF HTML5></header><TMPL_ELSE></div></TMPL_IF>
+
+<TMPL_IF HAVE_ACTIONS>
+<TMPL_IF HTML5><nav class="actions"><TMPL_ELSE><div class="actions"></TMPL_IF>
+<ul>
+<TMPL_IF REMOVEURL>
+<li><a href="<TMPL_VAR REMOVEURL>" rel="nofollow">Remove comment</a></li>
+</TMPL_IF>
+</ul>
+<TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
+</TMPL_IF>
+
+<div style="clear: both"></div>
+<TMPL_IF HTML5></article><TMPL_ELSE></div></TMPL_IF>

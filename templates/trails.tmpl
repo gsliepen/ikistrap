@@ -1,0 +1,23 @@
+<TMPL_LOOP TRAILLOOP>
+<TMPL_IF __FIRST__><TMPL_IF HTML5><nav class="trails"><TMPL_ELSE><div class="trails"></TMPL_IF></TMPL_IF>
+<div class="trail">
+<TMPL_IF PREVPAGE>
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="<TMPL_VAR PREVURL>"><TMPL_VAR PREVTITLE></a>
+<span class="trailsep">|</span>
+</span>
+</TMPL_IF>
+<span class="trailup">
+<a href="<TMPL_VAR TRAILURL>"><TMPL_VAR TRAILTITLE></a>
+</span>
+<TMPL_IF NEXTPAGE>
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="<TMPL_VAR NEXTURL>"><TMPL_VAR NEXTTITLE></a>
+<span class="trailarrow">→</span>
+</span>
+</TMPL_IF>
+</div>
+<TMPL_IF __LAST__><TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF></TMPL_IF>
+</TMPL_LOOP>

@@ -1,0 +1,21 @@
+<TMPL_VAR FORM-START>
+<div>
+ <TMPL_VAR FIELD-DO>
+ <TMPL_VAR FIELD-SID>
+ <TMPL_VAR FIELD-REV>
+<label for="revertmessage" class="block">Optional comment about this change:</label>
+ <TMPL_VAR FIELD-REVERTMESSAGE>
+</div>
+<div class="revert buttons">
+<TMPL_VAR form-submit>
+<TMPL_VAR form-cancel>
+</div>
+<TMPL_VAR FORM-END>
+<br \>
+<div class="header">
+<span>Diff being reverted:</span>
+</div>
+<div id="diff">
+<pre>
+<TMPL_VAR diff>
+</pre>

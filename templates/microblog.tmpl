@@ -1,0 +1,22 @@
+<div class="microblog">
+
+<div class="inlinecontent">
+<TMPL_VAR CONTENT>
+</div>
+
+<div class="microblog-header">
+
+<TMPL_IF AUTHOR>
+<span class="author">
+<TMPL_IF AUTHORURL>
+<a href="<TMPL_VAR AUTHORURL>"><TMPL_VAR AUTHOR></a>
+<TMPL_ELSE>
+<TMPL_VAR AUTHOR>
+</TMPL_IF>
+</span>
+</TMPL_IF>
+
+&mdash; <TMPL_VAR CTIME>
+
+</div> <!--.microblog-header-->
+</div> <!--.microblog-->

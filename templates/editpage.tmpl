@@ -1,0 +1,91 @@
+<TMPL_VAR JAVASCRIPT>
+<TMPL_VAR MESSAGE>
+<br />
+<TMPL_VAR FORM-START>
+<TMPL_VAR FIELD-DO>
+<TMPL_VAR FIELD-SID>
+<TMPL_VAR FIELD-FROM>
+<TMPL_VAR FIELD-RCSINFO>
+<TMPL_VAR FIELD-NEWFILE>
+<TMPL_IF NAME="PAGE_SELECT">
+<label for="page" class="inline">Page location:</label><TMPL_VAR FIELD-PAGE>
+<label for="type" class="inline">Page type:</label><TMPL_VAR FIELD-TYPE>
+<TMPL_ELSE>
+<TMPL_VAR FIELD-PAGE>
+<TMPL_VAR FIELD-TYPE>
+</TMPL_IF>
+<div class="editcontentdiv">
+<TMPL_VAR FIELD-EDITCONTENT><br />
+</div>
+<TMPL_IF NAME="CAN_COMMIT">
+<label for="editmessage" class="block">Optional description of this change:</label>
+<TMPL_VAR FIELD-EDITMESSAGE><br />
+</TMPL_IF>
+<TMPL_VAR FORM-SUBMIT>
+<TMPL_VAR HELPONFORMATTINGLINK>
+<TMPL_IF NAME="FIELD-ATTACHMENT">
+<a class="toggle" href="#attachments">Attachments</a>
+</TMPL_IF>
+<TMPL_VAR FIELD-SUBSCRIBE>
+<TMPL_IF NAME="FIELD-ATTACHMENT">
+<div class="<TMPL_VAR ATTACHMENTS-CLASS>" id="attachments">
+<div id="fileupload"> 
+<script>
+$(function () { $('#fileupload').fileupload(); }); // initialize upload widget
+</script>
+<script id="template-upload" type="text/x-jquery-tmpl"> 
+    <tr class="template-upload{{if error}} ui-state-error{{/if}}">
+        <td><input type="checkbox" name="attachment_select" value="${name}" />${name}</td>
+        {{if error}}
+        <td class="error" colspan="2">failed!</td>
+        {{else}}
+        <td class="progress" colspan="2"><div></div></td>
+        <td class="start"><button>Start</button></td>
+        {{/if}}
+        <td class="cancel"><button>Cancel</button></td>
+    </tr>
+</script> 
+<script id="template-download" type="text/x-jquery-tmpl"> 
+    <tr class="template-download{{if error}} ui-state-error{{/if}}">
+        <td><input type="checkbox" checked name="attachment_select" value="${name}" />${name}</td>
+        <td>${humansize}</td>
+        {{if error}}
+        <td class="error" colspan="2">failed!</td>
+        {{else}}
+        <td>${stored_msg}</td>
+        {{/if}}
+    </tr>
+</script> 
+<div class="fileupload-content">
+<table class="files">
+<TMPL_LOOP NAME="ATTACHMENT_LIST">
+<tr><td><input type="checkbox" name="attachment_select" value="<TMPL_VAR NAME ESCAPE="HTML">" /><TMPL_VAR LINK></td><td><TMPL_VAR SIZE></td><td><TMPL_VAR MTIME></td></tr>
+</TMPL_LOOP>
+</table>
+</div>
+<TMPL_VAR FIELD-ATTACHMENT>
+<noscript><TMPL_VAR FIELD-UPLOAD></noscript>
+<TMPL_VAR FIELD-LINK><TMPL_VAR FIELD-RENAME><TMPL_VAR FIELD-REMOVE>
+</div> 
+</div>
+</TMPL_IF>
+<TMPL_VAR FORM-END>
+<TMPL_VAR WMD_PREVIEW>
+<TMPL_IF NAME="PAGE_PREVIEW">
+<hr />
+<div class="header">
+<span>Page preview:</span>
+</div>
+<div id="preview">
+<TMPL_VAR PAGE_PREVIEW>
+</div>
+</TMPL_IF>
+<TMPL_IF NAME="PAGE_DIFF">
+<hr />
+<div class="header">
+<span>Diff:</span>
+</div>
+<div id="diff">
+<TMPL_VAR PAGE_DIFF>
+</div>
+</TMPL_IF>

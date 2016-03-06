@@ -1,0 +1,43 @@
+<div class="editcomment">
+<TMPL_VAR MESSAGE>
+<br />
+<TMPL_VAR FORM-START>
+<TMPL_VAR FIELD-DO>
+<TMPL_VAR FIELD-SID>
+<TMPL_VAR FIELD-PAGE>
+<TMPL_UNLESS NAME=USERNAME>
+<TMPL_IF NAME=ALLOWAUTHOR>
+<label for="author" class="block">Name:</label>
+<TMPL_VAR NAME=FIELD-AUTHOR> (optional, or <a href="<TMPL_VAR SIGNINURL>">signin</a>)
+<br/>
+<label for="url" class="block">Website:</label>
+<TMPL_VAR NAME=FIELD-URL> (optional)
+<br />
+<label for="url" class="block">Email:</label>
+<TMPL_VAR NAME=FIELD-EMAIL> <TMPL_VAR FIELD-ANONSUBSCRIBE>
+<br />
+<TMPL_ELSE>
+(You might want to <a href="<TMPL_VAR SIGNINURL>">Signin</a> first?)
+<br />
+</TMPL_IF>
+</TMPL_UNLESS>
+<label for="subject" class="block">Subject:</label>
+<TMPL_VAR FIELD-SUBJECT><br />
+<label for="editcontent" class="block">Comment:</label>
+<TMPL_VAR FIELD-EDITCONTENT><br />
+<TMPL_VAR FORM-SUBMIT> <TMPL_VAR FIELD-TYPE> <TMPL_VAR HELPONFORMATTINGLINK>
+<TMPL_VAR FIELD-SUBSCRIBE><br />
+<TMPL_VAR NAME="FORM-END">
+<TMPL_VAR WMD_PREVIEW>
+
+<TMPL_IF NAME="PAGE_PREVIEW">
+<hr />
+<div class="header">
+<span>Comment preview:</span>
+</div><!-- .header -->
+<div id="preview">
+<TMPL_VAR PAGE_PREVIEW>
+</div><!-- #preview -->
+</TMPL_IF>
+
+</div><!-- .editcomment -->

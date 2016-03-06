@@ -1,0 +1,49 @@
+<entry>
+	<title><TMPL_VAR TITLE></title>
+<TMPL_IF GUID>
+	<id><TMPL_VAR GUID></id>
+<TMPL_ELSE>
+	<id><TMPL_VAR URL></id>
+</TMPL_IF>
+	<link href="<TMPL_VAR PERMALINK>"/>
+<TMPL_IF AUTHOR>
+	<author><name><TMPL_VAR AUTHOR ESCAPE=HTML></name></author>
+</TMPL_IF>
+<TMPL_IF COPYRIGHT>
+	<rights type="html" xml:lang="en">
+<TMPL_IF LICENSE>
+		<TMPL_VAR LICENSE ESCAPE=HTML>
+		<TMPL_VAR COPYRIGHT ESCAPE=HTML>
+<TMPL_ELSE>
+		<TMPL_VAR COPYRIGHT ESCAPE=HTML>
+</TMPL_IF>
+	</rights>
+<TMPL_ELSE>
+<TMPL_IF LICENSE>
+	<rights type="html" xml:lang="en">
+	<TMPL_VAR LICENSE ESCAPE=HTML>
+	</rights>
+</TMPL_IF>
+</TMPL_IF>
+<TMPL_IF CATEGORIES>
+<TMPL_LOOP CATEGORIES>
+	<category term="<TMPL_VAR CATEGORY>" />
+</TMPL_LOOP>
+</TMPL_IF>
+	<updated><TMPL_VAR MDATE_3339></updated>
+	<published><TMPL_VAR CDATE_3339></published>
+<TMPL_IF ENCLOSURE>
+	<link rel="enclosure" type="<TMPL_VAR TYPE>" href="<TMPL_VAR ENCLOSURE>" length="<TMPL_VAR LENGTH>" />
+</TMPL_IF>
+<TMPL_UNLESS SIMPLEPODCAST>
+	<content type="html" xml:lang="en">
+	<TMPL_VAR CONTENT ESCAPE=HTML>
+	</content>
+</TMPL_UNLESS>
+<TMPL_IF COMMENTSURL>
+	<link rel="comments" href="<TMPL_VAR COMMENTSURL>" type="text/html" />
+</TMPL_IF>
+<TMPL_IF ATOMCOMMENTSURL>
+	<link rel="comments" href="<TMPL_VAR ATOMCOMMENTSURL>" type="application/atom+xml" />
+</TMPL_IF>
+</entry>

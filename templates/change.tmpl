@@ -1,0 +1,57 @@
+[[!meta author="""<TMPL_VAR AUTHOR>"""]]
+<TMPL_IF AUTHORURL>
+[[!meta authorurl="""<TMPL_VAR AUTHORURL>"""]]
+</TMPL_IF>
+[[!meta title="""change to<TMPL_LOOP PAGES> <TMPL_VAR PAGE></TMPL_LOOP> on <TMPL_VAR WIKINAME>"""]]
+<TMPL_IF PERMALINK>
+[[!meta permalink="<TMPL_VAR PERMALINK>"]]
+</TMPL_IF>
+<div id="change-<TMPL_VAR REV>" class="metadata">
+<span class="desc"><br />Changed pages:</span>
+<span class="pagelinks">
+<TMPL_UNLESS HAS_DIFFURL>
+<TMPL_IF DIFF>
+<a href="#diff-<TMPL_VAR REV>" class="toggle" title="diff" rel="nofollow">[[diff|wikiicons/diff.png]]</a>
+</TMPL_IF>
+</TMPL_UNLESS>
+<TMPL_LOOP PAGES>
+<TMPL_IF DIFFURL><a href="<TMPL_VAR DIFFURL>" title="diff" rel="nofollow">[[diff|wikiicons/diff.png]]</a><TMPL_VAR LINK>
+<TMPL_ELSE><TMPL_VAR LINK></TMPL_IF>
+</TMPL_LOOP>
+</span>
+<span class="desc"><br />Changed by:</span>
+<span class="committer">
+<TMPL_IF AUTHORURL>
+<a href="<TMPL_VAR AUTHORURL>" rel="nofollow"><TMPL_VAR USER></a>
+<TMPL_ELSE>
+<TMPL_VAR USER>
+</TMPL_IF>
+</span>
+<span class="desc"><br />Commit type:</span>
+<span class="committype"><TMPL_VAR COMMITTYPE></span>
+<span class="desc"><br />Date:</span>
+<span class="changedate"><TMPL_VAR COMMITDATE></span>
+<span class="desc"><br /></span>
+<TMPL_IF REVERTURL><span class="revert">
+<a href="<TMPL_VAR REVERTURL>" title="revert" rel="nofollow">[[revert|wikiicons/revert.png]]</a>
+</span></TMPL_IF>
+</div>
+<div class="changelog">
+<TMPL_LOOP MESSAGE>
+<TMPL_IF LINE>
+<TMPL_VAR LINE><br />
+</TMPL_IF>
+</TMPL_LOOP>
+</div>
+<TMPL_IF DIFF>
+<TMPL_IF HAS_DIFFURL>
+<div class="diff">
+<TMPL_ELSE>
+<div class="toggleable" id="diff-<TMPL_VAR REV>">
+</TMPL_IF>
+<pre>
+<TMPL_VAR DIFF>
+</pre>
+</div>
+</TMPL_IF>
+<!-- <TMPL_VAR REV> -->
