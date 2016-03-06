@@ -1,0 +1,37 @@
+#!/usr/bin/perl
+
+use IkiWiki::Setup::Standard {
+	wikiname => 'Ikistrap example',
+	srcdir => 'example',
+	destdir => 'example.html',
+	url => 'file://example.html/',
+	add_plugins => [qw{404 goodstuff favicon htmltidy poll google sidebar highlight typography}],
+	templatedir => 'templates',
+	underlaydir => 'basewiki',
+	verbose => 1,
+	syslog => 0,
+	usedirs => 1,
+	prefix_directives => 1,
+	# use page/index.mdwn source files
+	indexpages => 0,
+	discussion => 1,
+	discussionpage => 'Discussion',
+	default_pageext => 'mdwn',
+	htmlext => 'html',
+	numbacklinks => 10,
+	umask => 022,
+	libdir => 'plugins',
+
+	rss => 1,
+	atom => 1,
+	pingurl => [],
+
+	multimarkdown => 1,
+
+	prettydateformat => '%B %o %Y',
+
+	recentchangespage => 'recentchanges',
+	recentchangesnum => 25,
+
+	tagbase => 'tag',
+}

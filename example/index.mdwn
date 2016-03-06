@@ -1,0 +1,5 @@
+# Welcome
+
+This is an example wiki to show off the ikistrap theme.
+Ikistrap tries to provide a fully-featured, modern looking HTML5 theme for ikiwiki.
+It uses Bootstrap 4 and Fonts Awesome.
