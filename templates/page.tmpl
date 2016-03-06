@@ -1,222 +1,202 @@
 <!DOCTYPE html>
 <TMPL_IF HTML_LANG_CODE><html lang="<TMPL_VAR HTML_LANG_CODE>" dir="<TMPL_VAR HTML_LANG_DIR>" xmlns="http://www.w3.org/1999/xhtml"><TMPL_ELSE><html xmlns="http://www.w3.org/1999/xhtml"></TMPL_IF>
 <head>
-<TMPL_IF DYNAMIC>
-<TMPL_IF FORCEBASEURL><base href="<TMPL_VAR FORCEBASEURL>" /><TMPL_ELSE>
-<TMPL_IF BASEURL><base href="<TMPL_VAR BASEURL>" /></TMPL_IF>
-</TMPL_IF>
-</TMPL_IF>
-<meta charset="utf-8" />
-<title><TMPL_VAR TITLE></title>
-<TMPL_IF RESPONSIVE_LAYOUT><meta name="viewport" content="width=device-width, initial-scale=1" /></TMPL_IF>
-<TMPL_IF FAVICON>
-<link rel="icon" href="<TMPL_VAR BASEURL><TMPL_VAR FAVICON>" type="image/x-icon" />
-</TMPL_IF>
-<link rel="stylesheet" href="<TMPL_VAR BASEURL>style.css" type="text/css" />
-<TMPL_IF LOCAL_CSS>
-<link rel="stylesheet" href="<TMPL_VAR BASEURL><TMPL_VAR LOCAL_CSS>" type="text/css" />
-<TMPL_ELSE>
-<link rel="stylesheet" href="<TMPL_VAR BASEURL>local.css" type="text/css" />
-</TMPL_IF>
-
-<TMPL_UNLESS DYNAMIC>
-<TMPL_IF EDITURL>
-<link rel="alternate" type="application/x-wiki" title="Edit this page" href="<TMPL_VAR EDITURL>" />
-</TMPL_IF>
-<TMPL_IF FEEDLINKS><TMPL_VAR FEEDLINKS></TMPL_IF>
-<TMPL_IF RELVCS><TMPL_VAR RELVCS></TMPL_IF>
-<TMPL_IF META><TMPL_VAR META></TMPL_IF>
-<TMPL_LOOP TRAILLOOP>
-<TMPL_IF PREVPAGE>
-<link rel="prev" href="<TMPL_VAR PREVURL>" title="<TMPL_VAR PREVTITLE>" />
-</TMPL_IF>
-<link rel="up" href="<TMPL_VAR TRAILURL>" title="<TMPL_VAR TRAILTITLE>" />
-<TMPL_IF NEXTPAGE>
-<link rel="next" href="<TMPL_VAR NEXTURL>" title="<TMPL_VAR NEXTTITLE>" />
-</TMPL_IF>
-</TMPL_LOOP>
-</TMPL_UNLESS>
-
+	<TMPL_IF DYNAMIC>
+	<TMPL_IF FORCEBASEURL><base href="<TMPL_VAR FORCEBASEURL>" />
+	<TMPL_ELSE><TMPL_IF BASEURL><base href="<TMPL_VAR BASEURL>" /></TMPL_IF>
+	</TMPL_IF>
+	</TMPL_IF>
+	<meta charset="utf-8" />
+	<title><TMPL_VAR TITLE></title>
+	<TMPL_IF RESPONSIVE_LAYOUT><meta name="viewport" content="width=device-width, initial-scale=1" /></TMPL_IF>
+	<TMPL_IF FAVICON><link rel="icon" href="<TMPL_VAR BASEURL><TMPL_VAR FAVICON>" type="image/x-icon" /></TMPL_IF>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css" />
+	<link rel="stylesheet" href="<TMPL_VAR BASEURL>style.css" type="text/css" />
+	<TMPL_IF LOCAL_CSS>
+	<link rel="stylesheet" href="<TMPL_VAR BASEURL><TMPL_VAR LOCAL_CSS>" type="text/css" />
+	<TMPL_ELSE>
+	<link rel="stylesheet" href="<TMPL_VAR BASEURL>local.css" type="text/css" />
+	</TMPL_IF>
+	<TMPL_UNLESS DYNAMIC>
+	<TMPL_IF EDITURL>
+	<link rel="alternate" type="application/x-wiki" title="Edit this page" href="<TMPL_VAR EDITURL>" />
+	</TMPL_IF>
+	<TMPL_IF FEEDLINKS><TMPL_VAR FEEDLINKS></TMPL_IF>
+	<TMPL_IF RELVCS><TMPL_VAR RELVCS></TMPL_IF>
+	<TMPL_IF META><TMPL_VAR META></TMPL_IF>
+	<TMPL_LOOP TRAILLOOP>
+	<TMPL_IF PREVPAGE>
+	<link rel="prev" href="<TMPL_VAR PREVURL>" title="<TMPL_VAR PREVTITLE>" />
+	</TMPL_IF>
+	<link rel="up" href="<TMPL_VAR TRAILURL>" title="<TMPL_VAR TRAILTITLE>" />
+	<TMPL_IF NEXTPAGE>
+	<link rel="next" href="<TMPL_VAR NEXTURL>" title="<TMPL_VAR NEXTTITLE>" />
+	</TMPL_IF>
+	</TMPL_LOOP>
+	</TMPL_UNLESS>
 </head>
+
 <body>
+	<div id="notfooter">
+	<header id="header" class="container">
+		<span>
+		<span class="parentlinks">
+		<TMPL_LOOP PARENTLINKS>
+		<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>/ 
+		</TMPL_LOOP>
+		</span>
+		<span class="title">
+		<TMPL_VAR TITLE>
+		<TMPL_IF ISTRANSLATION>
+		&nbsp;(<TMPL_VAR PERCENTTRANSLATED>%)
+		</TMPL_IF>
+		</span>
+		</span>
+		<TMPL_UNLESS DYNAMIC>
+		<TMPL_IF SEARCHFORM>
+		<TMPL_VAR SEARCHFORM>
+		</TMPL_IF>
+		</TMPL_UNLESS>
 
-<article class="page">
+		<TMPL_IF HAVE_ACTIONS>
+		<nav class="actions">
+		<ul>
+		<TMPL_IF EDITURL>
+		<li><a href="<TMPL_VAR EDITURL>" rel="nofollow">Edit</a></li>
+		</TMPL_IF>
+		<TMPL_IF RECENTCHANGESURL>
+		<li><a href="<TMPL_VAR RECENTCHANGESURL>">RecentChanges</a></li>
+		</TMPL_IF>
+		<TMPL_IF HISTORYURL>
+		<li><a href="<TMPL_VAR HISTORYURL>">History</a></li>
+		</TMPL_IF>
+		<TMPL_IF GETSOURCEURL>
+		<li><a href="<TMPL_VAR GETSOURCEURL>">Source</a></li>
+		</TMPL_IF>
+		<TMPL_IF PREFSURL>
+		<li><a href="<TMPL_VAR PREFSURL>">Preferences</a></li>
+		</TMPL_IF>
+		<TMPL_IF ACTIONS>
+		<TMPL_LOOP ACTIONS>
+		<li><TMPL_VAR ACTION></li>
+		</TMPL_LOOP>
+		</TMPL_IF>
+		<TMPL_IF COMMENTSLINK>
+		<li><TMPL_VAR COMMENTSLINK></li>
+		<TMPL_ELSE>
+		<TMPL_IF DISCUSSIONLINK>
+		<li><TMPL_VAR DISCUSSIONLINK></li>
+		</TMPL_IF>
+		</TMPL_IF>
+		</ul>
+		</nav>
+		</TMPL_IF>
 
-<section class="pageheader">
-<header class="header">
-<span>
-<span class="parentlinks">
-<TMPL_LOOP PARENTLINKS>
-<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>/ 
-</TMPL_LOOP>
-</span>
-<span class="title">
-<TMPL_VAR TITLE>
-<TMPL_IF ISTRANSLATION>
-&nbsp;(<TMPL_VAR PERCENTTRANSLATED>%)
-</TMPL_IF>
-</span>
-</span>
-<TMPL_UNLESS DYNAMIC>
-<TMPL_IF SEARCHFORM>
-<TMPL_VAR SEARCHFORM>
-</TMPL_IF>
-</TMPL_UNLESS>
-</header>
+		<TMPL_IF OTHERLANGUAGES>
+		<nav id="otherlanguages">
+		<ul>
+		<TMPL_LOOP OTHERLANGUAGES>
+		<li>
+		<a href="<TMPL_VAR URL>"><TMPL_VAR LANGUAGE></a>
+		<TMPL_IF MASTER>
+		(master)
+		<TMPL_ELSE>
+		&nbsp;(<TMPL_VAR PERCENT>%)
+		</TMPL_IF>
+		</li>
+		</TMPL_LOOP>
+		</ul>
+		</nav>
+		</TMPL_IF>
 
-<TMPL_IF HAVE_ACTIONS>
-<nav class="actions">
-<ul>
-<TMPL_IF EDITURL>
-<li><a href="<TMPL_VAR EDITURL>" rel="nofollow">Edit</a></li>
-</TMPL_IF>
-<TMPL_IF RECENTCHANGESURL>
-<li><a href="<TMPL_VAR RECENTCHANGESURL>">RecentChanges</a></li>
-</TMPL_IF>
-<TMPL_IF HISTORYURL>
-<li><a href="<TMPL_VAR HISTORYURL>">History</a></li>
-</TMPL_IF>
-<TMPL_IF GETSOURCEURL>
-<li><a href="<TMPL_VAR GETSOURCEURL>">Source</a></li>
-</TMPL_IF>
-<TMPL_IF PREFSURL>
-<li><a href="<TMPL_VAR PREFSURL>">Preferences</a></li>
-</TMPL_IF>
-<TMPL_IF ACTIONS>
-<TMPL_LOOP ACTIONS>
-<li><TMPL_VAR ACTION></li>
-</TMPL_LOOP>
-</TMPL_IF>
-<TMPL_IF COMMENTSLINK>
-<li><TMPL_VAR COMMENTSLINK></li>
-<TMPL_ELSE>
-<TMPL_IF DISCUSSIONLINK>
-<li><TMPL_VAR DISCUSSIONLINK></li>
-</TMPL_IF>
-</TMPL_IF>
-</ul>
-</nav>
-</TMPL_IF>
+		<TMPL_UNLESS DYNAMIC>
+		<TMPL_VAR TRAILS>
+		</TMPL_UNLESS>
+	</header>
 
-<TMPL_IF OTHERLANGUAGES>
-<nav id="otherlanguages">
-<ul>
-<TMPL_LOOP OTHERLANGUAGES>
-<li>
-<a href="<TMPL_VAR URL>"><TMPL_VAR LANGUAGE></a>
-<TMPL_IF MASTER>
-(master)
-<TMPL_ELSE>
-&nbsp;(<TMPL_VAR PERCENT>%)
-</TMPL_IF>
-</li>
-</TMPL_LOOP>
-</ul>
-</nav>
-</TMPL_IF>
+	<TMPL_UNLESS DYNAMIC>
+	<TMPL_IF SIDEBAR>
+	<aside id="sidebar">
+		<TMPL_VAR SIDEBAR>
+	</aside>
+	</TMPL_IF>
+	</TMPL_UNLESS>
 
-<TMPL_UNLESS DYNAMIC>
-<TMPL_VAR TRAILS>
-</TMPL_UNLESS>
+	<main id="content">
+		<TMPL_VAR CONTENT>
+	</main>
 
-</section>
+	<TMPL_IF ENCLOSURE>
+	<section id="enclosure">
+		<a href="<TMPL_VAR ENCLOSURE>">Download</a>
+	</section>
+	</TMPL_IF>
 
-<TMPL_UNLESS DYNAMIC>
-<TMPL_IF SIDEBAR>
-<aside class="sidebar">
-<TMPL_VAR SIDEBAR>
-</aside>
-</TMPL_IF>
-</TMPL_UNLESS>
+	<TMPL_UNLESS DYNAMIC>
+	<TMPL_IF COMMENTS>
+	<section id="comments" role="complementary">
+		<TMPL_VAR COMMENTS>
+		<TMPL_IF ADDCOMMENTURL>
+		<div class="addcomment">
+			<a href="<TMPL_VAR ADDCOMMENTURL>">Add a comment</a>
+		</div>
+		<TMPL_ELSE>
+		<div class="addcomment">Comments on this page are closed.</div>
+		</TMPL_IF>
+	</section>
+	</TMPL_IF>
+	</TMPL_UNLESS>
 
-<div id="pagebody">
+	<footer id="footer" class="container" role="contentinfo">
+		<TMPL_UNLESS DYNAMIC>
+		<nav id="pageinfo">
+			<TMPL_VAR TRAILS>
+			<TMPL_IF TAGS>
+			<nav class="tags">
+				Tags:
+				<TMPL_LOOP TAGS>
+				<TMPL_VAR LINK>
+				</TMPL_LOOP>
+			</nav>
+			</TMPL_IF>
 
-<section id="content" role="main">
-<TMPL_VAR CONTENT>
-</section>
+			<TMPL_IF BACKLINKS>
+			<nav id="backlinks">
+				Links:
+				<TMPL_LOOP BACKLINKS>
+				<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>
+				</TMPL_LOOP>
+				<TMPL_IF MORE_BACKLINKS>
+				<span class="popup">...
+				<span class="balloon">
+				<TMPL_LOOP MORE_BACKLINKS>
+				<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>
+				</TMPL_LOOP>
+				</span>
+				</span>
+				</TMPL_IF>
+			</nav>
+			</TMPL_IF>
 
-<TMPL_IF ENCLOSURE>
-<section id="enclosure">
-<a href="<TMPL_VAR ENCLOSURE>">Download</a>
-</section>
-</TMPL_IF>
+			<TMPL_IF COPYRIGHT>
+			<div class="pagecopyright">
+				<a name="pagecopyright"/><TMPL_VAR COPYRIGHT>
+			</div>
+			</TMPL_IF>
 
-<TMPL_UNLESS DYNAMIC>
-<TMPL_IF COMMENTS>
-<section id="comments" role="complementary">
-<TMPL_VAR COMMENTS>
-<TMPL_IF ADDCOMMENTURL>
-<div class="addcomment">
-<a href="<TMPL_VAR ADDCOMMENTURL>">Add a comment</a>
-</div>
-<TMPL_ELSE>
-<div class="addcomment">Comments on this page are closed.</div>
-</TMPL_IF>
-</section>
-</TMPL_IF>
-</TMPL_UNLESS>
+			<TMPL_IF LICENSE>
+			<div class="pagelicense">
+				<a name="pagelicense"/>License: <TMPL_VAR LICENSE>
+			</div>
+			</TMPL_IF>
 
-</div>
-
-<footer id="footer" class="pagefooter" role="contentinfo">
-<TMPL_UNLESS DYNAMIC>
-<nav id="pageinfo">
-
-<TMPL_VAR TRAILS>
-
-<TMPL_IF TAGS>
-<nav class="tags">
-Tags:
-<TMPL_LOOP TAGS>
-<TMPL_VAR LINK>
-</TMPL_LOOP>
-</nav>
-</TMPL_IF>
-
-<TMPL_IF BACKLINKS>
-<nav id="backlinks">
-Links:
-<TMPL_LOOP BACKLINKS>
-<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>
-</TMPL_LOOP>
-<TMPL_IF MORE_BACKLINKS>
-<span class="popup">...
-<span class="balloon">
-<TMPL_LOOP MORE_BACKLINKS>
-<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>
-</TMPL_LOOP>
-</span>
-</span>
-</TMPL_IF>
-</nav>
-</TMPL_IF>
-
-<TMPL_IF COPYRIGHT>
-<div class="pagecopyright">
-<a name="pagecopyright"></a>
-<TMPL_VAR COPYRIGHT>
-</div>
-</TMPL_IF>
-
-<TMPL_IF LICENSE>
-<div class="pagelicense">
-<a name="pagelicense"></a>
-License: <TMPL_VAR LICENSE>
-</div>
-</TMPL_IF>
-
-<div class="pagedate">
-Last edited <TMPL_VAR MTIME>
-<!-- Created <TMPL_VAR CTIME> -->
-</div>
-
-</nav>
-<TMPL_IF EXTRAFOOTER><TMPL_VAR EXTRAFOOTER></TMPL_IF>
-</TMPL_UNLESS>
-<!-- from <TMPL_VAR WIKINAME> -->
-</footer>
-
-</article>
-
+			<div class="pagedate">
+				Last edited <TMPL_VAR MTIME>
+			</div>
+		</nav>
+		<TMPL_IF EXTRAFOOTER><TMPL_VAR EXTRAFOOTER></TMPL_IF>
+		</TMPL_UNLESS>
+	</footer>
 </body>
 </html>

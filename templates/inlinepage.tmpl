@@ -1,78 +1,74 @@
 <article class="inlinepage">
+	<section class="inlineheader">
+		<TMPL_IF AUTHOR>
+		<span class="author">
+			<TMPL_IF AUTHORURL>
+			<a href="<TMPL_VAR AUTHORURL>"><TMPL_VAR AUTHOR></a>
+			<TMPL_ELSE>
+			<TMPL_VAR AUTHOR>
+			</TMPL_IF>
+		</span>
+		</TMPL_IF>
+		<header class="header">
+			<TMPL_IF PERMALINK>
+			<a href="<TMPL_VAR PERMALINK>"><TMPL_VAR TITLE></a>
+			<TMPL_ELSE>
+			<a href="<TMPL_VAR PAGEURL>"><TMPL_VAR TITLE></a>
+			</TMPL_IF>
+		</header>
+	</section>
 
-<section class="inlineheader">
-<TMPL_IF AUTHOR>
-<span class="author">
-<TMPL_IF AUTHORURL>
-<a href="<TMPL_VAR AUTHORURL>"><TMPL_VAR AUTHOR></a>
-<TMPL_ELSE>
-<TMPL_VAR AUTHOR>
-</TMPL_IF>
-</span>
-</TMPL_IF>
-<header class="header">
-<TMPL_IF PERMALINK>
-<a href="<TMPL_VAR PERMALINK>"><TMPL_VAR TITLE></a>
-<TMPL_ELSE>
-<a href="<TMPL_VAR PAGEURL>"><TMPL_VAR TITLE></a>
-</TMPL_IF>
-</header>
-</section>
+	<section class="inlinecontent">
+		<TMPL_VAR CONTENT>
+	</section>
 
-<section class="inlinecontent">
-<TMPL_VAR CONTENT>
-</section>
+	<TMPL_IF ENCLOSURE>
+	<section id="inlineenclosure">
+		<a href="<TMPL_VAR ENCLOSURE>">Download</a>
+	</section>
+	</TMPL_IF>
 
-<TMPL_IF ENCLOSURE>
-<section id="inlineenclosure">
-<a href="<TMPL_VAR ENCLOSURE>">Download</a>
-</section>
-</TMPL_IF>
+	<footer class="inlinefooter">
+		<span class="pagedate">
+			Posted <TMPL_VAR CTIME>
+		</span>
 
-<footer class="inlinefooter">
+		<TMPL_IF TAGS>
+		<nav class="tags">
+			Tags:
+			<TMPL_LOOP TAGS>
+			<TMPL_VAR LINK>
+			</TMPL_LOOP>
+		</nav>
+		</TMPL_IF>
 
-<span class="pagedate">
-Posted <TMPL_VAR CTIME>
-</span>
+		<TMPL_IF COPYRIGHT>
+		<div class="pagecopyright">
+			<TMPL_VAR COPYRIGHT>
+		</div>
+		</TMPL_IF>
 
-<TMPL_IF TAGS>
-<nav class="tags">
-Tags:
-<TMPL_LOOP TAGS>
-<TMPL_VAR LINK>
-</TMPL_LOOP>
-</nav>
-</TMPL_IF>
+		<TMPL_IF LICENSE>
+		<div class="pagelicense">
+			License: <TMPL_VAR LICENSE>
+		</div>
+		</TMPL_IF>
 
-<TMPL_IF COPYRIGHT>
-<div class="pagecopyright">
-<TMPL_VAR COPYRIGHT>
-</div>
-</TMPL_IF>
-
-<TMPL_IF LICENSE>
-<div class="pagelicense">
-License: <TMPL_VAR LICENSE>
-</div>
-</TMPL_IF>
-
-<TMPL_IF HAVE_ACTIONS>
-<nav class="actions">
-<ul>
-<TMPL_IF EDITURL>
-<li><a href="<TMPL_VAR EDITURL>" rel="nofollow">Edit</a></li>
-</TMPL_IF>
-<TMPL_IF COMMENTSLINK>
-<li><TMPL_VAR COMMENTSLINK></li>
-<TMPL_ELSE>
-<TMPL_IF DISCUSSIONLINK>
-<li><TMPL_VAR DISCUSSIONLINK></li>
-</TMPL_IF>
-</TMPL_IF>
-</ul>
-</nav>
-</TMPL_IF>
-
-</footer>
-
+		<TMPL_IF HAVE_ACTIONS>
+		<nav class="actions">
+			<ul>
+				<TMPL_IF EDITURL>
+				<li><a href="<TMPL_VAR EDITURL>" rel="nofollow">Edit</a></li>
+				</TMPL_IF>
+				<TMPL_IF COMMENTSLINK>
+				<li><TMPL_VAR COMMENTSLINK></li>
+				<TMPL_ELSE>
+				<TMPL_IF DISCUSSIONLINK>
+				<li><TMPL_VAR DISCUSSIONLINK></li>
+				</TMPL_IF>
+				</TMPL_IF>
+			</ul>
+		</nav>
+		</TMPL_IF>
+	</footer>
 </article>

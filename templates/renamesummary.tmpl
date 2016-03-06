@@ -11,14 +11,18 @@
 <TMPL_IF FIXEDLINKS>
 The following pages have been automatically modified to update their links to <TMPL_VAR DEST>:
 <ul>
-<TMPL_LOOP FIXEDLINKS><li><TMPL_VAR PAGE></li></TMPL_LOOP>
+	<TMPL_LOOP FIXEDLINKS>
+	<li><TMPL_VAR PAGE></li>
+	</TMPL_LOOP>
 </ul>
 </TMPL_IF>
 <TMPL_IF BROKENLINKS_CHECKED>
 <TMPL_IF BROKENLINKS>
 The following pages still link to <TMPL_VAR SRC>:
 <ul>
-<TMPL_LOOP BROKENLINKS><li><TMPL_VAR PAGE></li></TMPL_LOOP>
+	<TMPL_LOOP BROKENLINKS>
+	<li><TMPL_VAR PAGE></li>
+	</TMPL_LOOP>
 </ul>
 </TMPL_IF>
 </TMPL_IF>

@@ -1,65 +1,66 @@
 <article class="comment" id="<TMPL_VAR COMMENTID>">
-
-<TMPL_IF COMMENTAUTHORAVATAR><div class="comment-avatar">
-<img src="<TMPL_VAR COMMENTAUTHORAVATAR>" alt="" />
-</div></TMPL_IF>
+<TMPL_IF COMMENTAUTHORAVATAR>
+<div class="comment-avatar">
+	<img src="<TMPL_VAR COMMENTAUTHORAVATAR>" alt="" />
+</div>
+</TMPL_IF>
 
 <header class="comment-subject">
-<TMPL_IF PERMALINK>
-<a href="<TMPL_VAR PERMALINK>"><TMPL_VAR TITLE></a>
-<TMPL_ELSE>
-<TMPL_VAR TITLE>
-</TMPL_IF>
+	<TMPL_IF PERMALINK>
+	<a href="<TMPL_VAR PERMALINK>"><TMPL_VAR TITLE></a>
+	<TMPL_ELSE>
+	<TMPL_VAR TITLE>
+	</TMPL_IF>
 </header>
 
 <section class="inlinecontent">
-<TMPL_VAR CONTENT>
+	<TMPL_VAR CONTENT>
 </section>
 
 <header class="comment-header">
-<TMPL_IF COMMENTUSER>
-Comment by
-<TMPL_IF COMMENTOPENID>
-<span class="author" title="OpenID">
-<a href="<TMPL_VAR COMMENTOPENID>"><TMPL_VAR COMMENTAUTHOR></a>
-</span>
-<TMPL_ELSE>
-<span class="author" title="Signed in">
-<TMPL_IF COMMENTAUTHORURL>
-<a href="<TMPL_VAR COMMENTAUTHORURL>"><TMPL_VAR COMMENTAUTHOR></a>
-<TMPL_ELSE>
-<TMPL_VAR COMMENTAUTHOR>
-</TMPL_IF>
-</span>
-</TMPL_IF>
-<TMPL_ELSE>
-<TMPL_IF AUTHOR>
-Comment by
-<TMPL_IF COMMENTIP>
-<span class="author" title="Unauthenticated, from <TMPL_VAR COMMENTIP>">
-<TMPL_ELSE>
-<span class="author" title="Unauthenticated, from unknown IP address">
-</TMPL_IF>
-<TMPL_IF AUTHORURL>
-<a href="<TMPL_VAR AUTHORURL>"><TMPL_VAR AUTHOR></a>
-<TMPL_ELSE>
-<TMPL_VAR AUTHOR>
-</TMPL_IF>
-</TMPL_IF>
-</span>
-</TMPL_IF>
-&mdash; <TMPL_VAR CTIME>
+	<TMPL_IF COMMENTUSER>
+	Comment by
+	<TMPL_IF COMMENTOPENID>
+	<span class="author" title="OpenID">
+		<a href="<TMPL_VAR COMMENTOPENID>"><TMPL_VAR COMMENTAUTHOR></a>
+	</span>
+	<TMPL_ELSE>
+	<span class="author" title="Signed in">
+		<TMPL_IF COMMENTAUTHORURL>
+		<a href="<TMPL_VAR COMMENTAUTHORURL>"><TMPL_VAR COMMENTAUTHOR></a>
+		<TMPL_ELSE>
+		<TMPL_VAR COMMENTAUTHOR>
+		</TMPL_IF>
+	</span>
+	</TMPL_IF>
+	<TMPL_ELSE>
+	<TMPL_IF AUTHOR>
+	Comment by
+	<TMPL_IF COMMENTIP>
+	<span class="author" title="Unauthenticated, from <TMPL_VAR COMMENTIP>">
+	<TMPL_ELSE>
+	<span class="author" title="Unauthenticated, from unknown IP address">
+	</TMPL_IF>
+		<TMPL_IF AUTHORURL>
+		<a href="<TMPL_VAR AUTHORURL>"><TMPL_VAR AUTHOR></a>
+		<TMPL_ELSE>
+		<TMPL_VAR AUTHOR>
+		</TMPL_IF>
+		</TMPL_IF>
+	</span>
+	</TMPL_IF>
+	&mdash; <TMPL_VAR CTIME>
 </header>
 
 <TMPL_IF HAVE_ACTIONS>
 <nav class="actions">
-<ul>
-<TMPL_IF REMOVEURL>
-<li><a href="<TMPL_VAR REMOVEURL>" rel="nofollow">Remove comment</a></li>
-</TMPL_IF>
-</ul>
+	<ul>
+		<TMPL_IF REMOVEURL>
+		<li><a href="<TMPL_VAR REMOVEURL>" rel="nofollow">Remove comment</a></li>
+		</TMPL_IF>
+	</ul>
 </nav>
 </TMPL_IF>
 
-<div style="clear: both"></div>
+<div style="clear: both"/>
 </article>
