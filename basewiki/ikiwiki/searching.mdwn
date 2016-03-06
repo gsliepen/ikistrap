@@ -1,0 +1,20 @@
+[[!meta robots="noindex, follow"]]
+
+[[!if test="enabled(search)"
+then="This wiki has searching **enabled**."
+else="This wiki has searching **disabled**."]]
+
+If searching is enabled, you can enter search terms in the search field,
+as you'd expect. There are a few special things you can do to construct
+more powerful searches.
+
+* To match a phrase, enclose it in double quotes.
+* `AND` can be used to search for documents containing two expressions.
+* `OR` can be used to search for documents containing either one of
+  two expressions.
+* Parentheses can be used to build up complicated search expressions. For
+  example, "(foo AND bar) OR (me AND you)"
+* Prefix a search term with "-" to avoid it from appearing in the results.
+  For example, "-discussion" will omit "discussion".
+* To search for a page with a given title, use "title:foo".
+* To search for pages that contain a "bar" link, use "link:bar".

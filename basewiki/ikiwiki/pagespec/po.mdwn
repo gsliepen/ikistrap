@@ -1,0 +1,23 @@
+[[!if test="enabled(po)"
+     then="This wiki has po support **enabled**."
+     else="This wiki has po support **disabled**."]]
+
+If the [[!iki plugins/po desc=po]] plugin is enabled, the regular
+[[ikiwiki/PageSpec]] syntax is expanded with the following additional
+tests that can be used to improve user navigation in a multi-lingual
+wiki:
+
+* "`lang(LL)`" - tests whether a page is written in the language
+  specified as a ISO639-1 (two-letter) language code.
+* "`currentlang()`" - tests whether a page is written in the same
+  language as the current page.
+* "`needstranslation()`" - tests whether a page needs translation
+  work. Only slave pages match this PageSpec. A minimum target
+  translation percentage can optionally be passed as an integer
+  parameter: "`needstranslation(50)`" matches only pages less than 50%
+  translated.
+
+Note that every non-po page is considered to be written in
+`po_master_language`, as specified in `ikiwiki.setup`.
+
+[[!meta robots="noindex, follow"]]

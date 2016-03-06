@@ -1,0 +1,56 @@
+[[!meta robots="noindex, follow"]]
+Directives are similar to a [[ikiwiki/WikiLink]] in form, except they
+begin with `!` and may contain parameters. The general form is:
+
+	\[[!directive param="value" param="value"]]
+
+This gets expanded before the rest of the page is processed, and can be used
+to transform the page in various ways.
+
+The quotes around values can be omitted if the value is a simple word.
+Also, some directives may use parameters without values, for example:
+
+	\[[!tag foo]]
+
+A directive does not need to all be on one line, it can be
+wrapped to multiple lines if you like:
+	
+	\[[!directive foo="baldersnatch"
+	bar="supercalifragilisticexpialidocious" baz=11]]
+
+Also, multiple lines of *quoted* text can be used for a value.
+To allow quote marks inside the quoted text, delimit the block
+of text with triple-double-quotes or triple-single-quotes:
+
+	\[[!directive text="""
+	1. "foo"
+	2. "bar"
+	3. "baz"
+	""" othertext='''
+	1. 'quux'
+	2. "foo"
+	''']]
+
+If you want to put text with triple quotes into a parameter value, you can
+use perl-style here-doc syntax, even nesting it like this:
+
+	\[[!directive text=<<OUTER
+	[[!otherdirective <<INNER
+	inner text
+	INNER]]
+	outer text
+	OUTER]]
+
+ikiwiki also has an older syntax for directives, which requires a space in
+directives to distinguish them from [[wikilinks|ikiwiki/wikilink]]. This
+syntax has several disadvantages: it requires a space after directives with
+no parameters (such as `\[[pagecount ]]`), and it prohibits spaces in
+[[wikilinks|ikiwiki/wikilink]].  ikiwiki now provides the `!`-prefixed
+syntax shown above as default.  However, ikiwiki still supports wikis using
+the older syntax, if the `prefix_directives` option is disabled.
+
+[[!if test="enabled(listdirectives)" then="""
+Here is a list of currently available directives in this wiki:
+
+[[!listdirectives ]]
+"""]]

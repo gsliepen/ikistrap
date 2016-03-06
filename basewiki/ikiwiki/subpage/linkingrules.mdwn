@@ -1,0 +1,33 @@
+[[!meta robots="noindex, follow"]]
+To link to or from a [[SubPage]], you can normally use a regular
+[[WikiLink]] that does not contain the name of the parent directory of
+the [[SubPage]]. Ikiwiki descends the directory hierarchy looking for a
+page that matches your link.
+
+For example, if FooBar/SubPage links to "OtherPage", ikiwiki will first 
+prefer pointing the link to FooBar/SubPage/OtherPage if it exists, next
+to FooBar/OtherPage and finally to OtherPage in the root of the wiki.
+
+Note that this means that if a link on FooBar/SomePage to "OtherPage"
+currently links to OtherPage, in the root of the wiki, and FooBar/OtherPage
+is created, the link will _change_ to point to FooBar/OtherPage. On the
+other hand, a link from BazBar to "OtherPage" would be unchanged by this
+creation of a [[SubPage]] of FooBar.
+
+You can also specify a link that contains a directory name, like
+"FooBar/OtherPage" to more exactly specify what page to link to. This is
+the only way to link to an unrelated [[SubPage]].
+
+You can use this to, for example, to link from BazBar to "FooBar/SubPage",
+or from BazBar/SubPage to "FooBar/SubPage".
+
+You can also use "/" at the start of a link, to specify exactly which page
+to link to, when there are multiple pages with similar names and the link
+goes to the wrong page by default. For example, linking from
+"FooBar/SubPage" to  "/OtherPage" will link to the "OtherPage" in the root
+of the wiki, even if there is a "FooBar/OtherPage".
+
+Also, if the wiki is configured with a userdir, you can link to pages
+within the userdir without specifying a path to them. This is to allow for
+easy linking to a user's page in the userdir, to sign a comment. These
+links are checked for last of all.

@@ -1,0 +1,7 @@
+Welcome to your new wiki.
+
+All wikis are supposed to have a [[SandBox]], so this one does too.
+
+----
+
+This wiki is powered by [[ikiwiki]].

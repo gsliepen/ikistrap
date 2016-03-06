@@ -1,0 +1,28 @@
+[[!meta title="OpenID"]]
+[[!meta robots="noindex, follow"]]
+
+[[!if test="enabled(openid)"
+     then="This wiki has OpenID **enabled**."
+     else="This wiki has OpenID **disabled**."]]
+
+[OpenID](http://openid.net) is a decentralized authentication mechanism
+that allows you to have one login that you can use on a growing number of
+websites.
+
+If you have an account with some of the larger web service providers,
+you might already have an OpenID. 
+[Directory of OpenID providers](http://openiddirectory.com/openid-providers-c-1.html)
+
+[[!if test="enabled(openid)" then="""
+To sign in to this wiki using OpenID, just enter it in the OpenID field in the
+signin form. You do not need to give this wiki a password or go through any
+registration process when using OpenID.
+"""]]
+
+---
+
+It's also possible to make a page in the wiki usable as an OpenID url,
+by delegating it to an openid server. Here's an example of how to do that:
+
+	\[[!meta openid="http://yourid.myopenid.com/"
+	       server="http://www.myopenid.com/server"]]

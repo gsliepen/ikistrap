@@ -1,0 +1,12 @@
+[[!meta robots="noindex, follow"]]
+ikiwiki supports placing pages in a directory hierarchy. For example,
+this page, [[SubPage]] has some related pages placed under it, like
+[[SubPage/LinkingRules]]. This is a useful way to add some order to your
+wiki rather than just having a great big directory full of pages.
+
+To add a SubPage, just make a subdirectory and put pages in it. For
+example, this page is subpage.mdwn in this wiki's source, and there is also
+a subpage subdirectory, which contains subpage/linkingrules.mdwn. Subpages
+can be nested as deeply as you'd like.
+
+Linking to and from a SubPage is explained in [[LinkingRules]].

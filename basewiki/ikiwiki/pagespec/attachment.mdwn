@@ -1,0 +1,38 @@
+[[!meta robots="noindex, follow"]]
+[[!if test="enabled(attachment)"
+     then="This wiki has attachments **enabled**."
+     else="This wiki has attachments **disabled**."]]
+
+If attachments are enabled, the wiki admin can control what types of
+attachments will be accepted, via the `allowed_attachments`
+configuration setting.
+
+For example, to limit most users to uploading small images, and nothing else,
+while allowing larger mp3 files to be uploaded by joey into a specific
+directory, and check all attachments for viruses, something like this could be
+used:
+  
+	virusfree() and ((user(joey) and podcast/*.mp3 and mimetype(audio/mpeg) and maxsize(15mb)) or (mimetype(image/*) and maxsize(50kb)))
+
+The regular [[ikiwiki/PageSpec]] syntax is expanded with the following
+additional tests:
+
+* "`maxsize(size)`" - tests whether the attachment is no larger than the
+  specified size. The size defaults to being in bytes, but "kb", "mb", "gb"
+  etc can be used to specify the units.
+  
+* "`minsize(size)`" - tests whether the attachment is no smaller than the
+  specified size.
+
+* "`ispage()`" - tests whether the attachment will be treated by ikiwiki as a
+  wiki page. (Ie, if it has an extension of ".mdwn", or of any other enabled
+  page format).
+
+  So, if you don't want to allow wiki pages to be uploaded as attachments,
+  use `!ispage()` ; if you only want to allow wiki pages to be uploaded
+  as attachments, use `ispage()`.
+
+* "`mimetype(foo/bar)`" - checks the MIME type of the attachment. You can
+  include a glob in the type, for example `mimetype(image/*)`.
+
+* "`virusfree()`" - checks the attachment with an antiviral program.

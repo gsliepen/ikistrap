@@ -1,0 +1,11 @@
+[[!meta robots="noindex, follow"]]
+[Markdown](http://daringfireball.net/projects/markdown/)
+is a minimal markup language that resembles plain text as used in
+email messages. It is the markup language used by this wiki by default.
+
+For documentation about the markdown syntax, see [[formatting]] and
+[Markdown: syntax](http://daringfireball.net/projects/markdown/syntax).
+
+Note that [[WikiLinks|WikiLink]] and [[directives|directive]] are not part
+of the markdown syntax, and are the only bit of markup that this wiki
+handles internally.

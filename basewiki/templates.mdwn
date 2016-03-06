@@ -1,0 +1,100 @@
+[[Ikiwiki]] uses many templates for many purposes. By editing its templates,
+you can fully customise its appearance, and avoid duplicate content.
+
+Ikiwiki uses the HTML::Template module as its template engine. This
+supports things like conditionals and loops in templates and is pretty
+easy to learn. All you really need to know to modify templates is this:
+
+* To insert the value of a template variable, use `<TMPL_VAR variable>`.
+* To make a block of text conditional on a variable being set use
+  `<TMPL_IF variable>text</TMPL_IF>`.
+* To use one block of text if a variable is set and a second if it's not,
+  use `<TMPL_IF variable>text<TMPL_ELSE>other text</TMPL_IF>`
+
+[[!if test="enabled(template) or enabled(edittemplate)" then="""
+## template pages
+
+Template pages are regular wiki pages containing a
+[[!iki ikiwiki/directive/templatebody desc="templatebody directive"]],
+used as templates for other pages. The parts of the template
+page outside the directive can be used to document it.
+"""]]
+
+[[!if test="enabled(template)" then="""
+The [[!iki ikiwiki/directive/template desc="template directive"]] allows
+template pages to be filled out and inserted into other pages in the wiki.
+"""]]
+
+[[!if test="enabled(edittemplate)" then="""
+The [[!iki ikiwiki/directive/edittemplate desc="edittemplate directive"]] can
+be used to make new pages default to containing text from a template
+page, which can be filled out as the page is edited.
+"""]]
+
+[[!if test="(enabled(template) or enabled(edittemplate))
+and enabled(inline)" then="""
+These template pages are currently available:
+
+[[!inline pages="templates/* and !*.tmpl and !templates/*/* and !*/discussion"
+feeds=no archive=yes sort=title template=titlepage
+rootpage=templates postformtext="Add a new template page named:"]]
+"""]]
+
+If the template does not contain a `templatebody` directive, the entire
+source of the page is used for the template. This is deprecated.
+
+## template files
+
+Template files are unlike template pages in that they have the extension
+`.tmpl`. Template files are used extensively by Ikiwiki to generate html.
+They can contain html that would not normally be allowed on a wiki page.
+
+Template files are located in `/usr/share/ikiwiki/templates` by default;
+the `templatedir` setting can be used to make another directory be
+searched first. Customised template files can also be placed inside the
+"templates/" directory in your wiki's source -- files placed there override
+ones in the `templatedir`.
+
+Here is a full list of the template files used:
+
+* `page.tmpl` - Used for displaying all regular wiki pages. This is the
+  key template to customise to change the look and feel of Ikiwiki.
+  [[!if test="enabled(pagetemplate)" then="""
+  (The [[!iki ikiwiki/directive/pagetemplate desc="pagetemplate directive"]]
+  can be used to make a page use a different template than `page.tmpl`.)"""]]
+* `rsspage.tmpl` - Used for generating rss feeds for blogs.
+* `rssitem.tmpl` - Used for generating individual items on rss feeds.
+* `atompage.tmpl` - Used for generating atom feeds for blogs.
+* `atomitem.tmpl` - Used for generating individual items on atom feeds.
+* `inlinepage.tmpl` - Used for displaying a post in a blog.
+* `archivepage.tmpl` - Used for listing a page in a blog archive page.
+* `titlepage.tmpl` - Used for listing a page by title in a blog archive page.
+* `microblog.tmpl` - Used for showing a microblogging post inline.
+* `blogpost.tmpl` - Used for a form to add a post to a blog (and rss/atom links)
+* `feedlink.tmpl` - Used to add rss/atom links if `blogpost.tmpl` is not used.
+* `aggregatepost.tmpl` - Used by the aggregate plugin to create
+  a page for a post.
+* `searchform.tmpl`, `googleform.tmpl` - Used by the search plugin 
+  and google plugin to add search forms to wiki pages.
+* `searchquery.tmpl` - This is a Omega template, used by the
+  search plugin.
+* `comment.tmpl` - Used by the comments plugin to display a comment.
+* `change.tmpl` - Used to create a page describing a change made to the wiki.
+* `recentchanges.tmpl` - Used for listing a change on the RecentChanges page.
+* `autoindex.tmpl` - Filled in by the autoindex plugin to make index pages.
+* `autotag.tmpl` - Filled in by the tag plugin to make tag pages.
+* `calendarmonth.tmpl`, `calendaryear.tmpl` - Used by ikiwiki-calendar to
+  make calendar archive pages.
+* `trails.tmpl` - Used by the trail plugin to generate links on each page
+  that is a member of a trail.
+* `notifyemail.tmpl` - Used by the notifymail plugin to generate mails about
+  changed pages.
+* `editpage.tmpl`, `editconflict.tmpl`, `editcreationconflict.tmpl`,
+  `editfailedsave.tmpl`, `editpagegone.tmpl`, `pocreatepage.tmpl`,
+  `editcomment.tmpl` `commentmoderation.tmpl`, `renamesummary.tmpl`,
+  `passwordmail.tmpl`, `emailauth.tmpl`, `login-selector.tmpl`, 
+  `revert.tmpl` - Parts of ikiwiki's user interface; do not normally need
+  to be customised.
+
+
+[[!meta robots="noindex, follow"]]

@@ -1,0 +1,17 @@
+[[!meta robots="noindex, follow"]]
+This wiki is powered by [ikiwiki](http://ikiwiki.info/).
+[[!if test="enabled(version)"
+     then="(Currently running version [[!version ]].)"
+]]
+
+Some documentation on using ikiwiki:
+
+* [[ikiwiki/formatting]]
+* [[ikiwiki/wikilink]]
+* [[ikiwiki/subpage]]
+* [[ikiwiki/pagespec]]
+* [[ikiwiki/directive]]
+* [[ikiwiki/markdown]]
+* [[ikiwiki/openid]]
+* [[ikiwiki/searching]]
+* [[templates]]

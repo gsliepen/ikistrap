@@ -1,0 +1,30 @@
+Some [[directives|ikiwiki/directive]] that use
+[[PageSpecs|ikiwiki/pagespec]] allow
+specifying the order that matching pages are shown in. The following sort
+orders can be specified.
+
+* `age` - List pages from the most recently created to the oldest.
+
+* `mtime` - List pages with the most recently modified first.
+
+* `title` - Order by title (page name), e.g. "z/a a/b a/c"
+
+* `path` - Order by page name including parents, e.g. "a/b a/c z/a"
+[[!if test="enabled(sortnaturally)" then="""
+* `title_natural` - Orders by title, but numbers in the title are treated
+  as such, ("1 2 9 10 20" instead of "1 10 2 20 9")
+
+* `path_natural` - Like `path`, but numbers in the title are treated as such
+"""]]
+[[!if test="enabled(meta)" then="""
+* `meta(title)` - Order according to the `\[[!meta title="foo" sortas="bar"]]`
+  or `\[[!meta title="foo"]]` [[ikiwiki/directive]], or the page name if no
+  full title was set. `meta(author)`, `meta(date)`, `meta(updated)`, etc.
+  also work.
+"""]]
+
+In addition, you can combine several sort orders and/or reverse the order of
+sorting, with a string like `age -title` (which would sort by age, then by
+title in reverse order if two pages have the same age).
+
+[[!meta robots="noindex, follow"]]

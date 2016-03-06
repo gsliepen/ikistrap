@@ -1,0 +1,17 @@
+Use this template to create a popup window that is displayed when the mouse
+is over part of the page. This template has two parameters:
+<ul>
+<li>`mouseover` - This is the text or other content that triggers the
+popup.
+<li>`popup` - This should be the content of the popup window. It can be
+anything, even images or a whole little wiki page, but should not be too
+large for good usability.
+</ul>
+Note that browsers that do not support the CSS will display the popup
+inline in the page, inside square brackets.
+
+[[templatebody <<ENDBODY
+<span class="popup"><TMPL_VAR mouseover>
+<span class="paren">[</span><span class="balloon"><TMPL_VAR popup></span><span class="paren">]</span>
+</span>
+ENDBODY]]
