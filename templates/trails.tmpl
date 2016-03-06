@@ -1,5 +1,5 @@
 <TMPL_LOOP TRAILLOOP>
-<TMPL_IF __FIRST__><TMPL_IF HTML5><nav class="trails"><TMPL_ELSE><div class="trails"></TMPL_IF></TMPL_IF>
+<TMPL_IF __FIRST__><nav class="trails"></TMPL_IF>
 <div class="trail">
 <TMPL_IF PREVPAGE>
 <span class="trailprev">
@@ -19,5 +19,5 @@
 </span>
 </TMPL_IF>
 </div>
-<TMPL_IF __LAST__><TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF></TMPL_IF>
+<TMPL_IF __LAST__></nav></TMPL_IF>
 </TMPL_LOOP>

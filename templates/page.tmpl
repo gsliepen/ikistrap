@@ -6,7 +6,7 @@
 <TMPL_IF BASEURL><base href="<TMPL_VAR BASEURL>" /></TMPL_IF>
 </TMPL_IF>
 </TMPL_IF>
-<TMPL_IF HTML5><meta charset="utf-8" /><TMPL_ELSE><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></TMPL_IF>
+<meta charset="utf-8" />
 <title><TMPL_VAR TITLE></title>
 <TMPL_IF RESPONSIVE_LAYOUT><meta name="viewport" content="width=device-width, initial-scale=1" /></TMPL_IF>
 <TMPL_IF FAVICON>
@@ -40,10 +40,10 @@
 </head>
 <body>
 
-<TMPL_IF HTML5><article class="page"><TMPL_ELSE><div class="page"></TMPL_IF>
+<article class="page">
 
-<TMPL_IF HTML5><section class="pageheader"><TMPL_ELSE><div class="pageheader"></TMPL_IF>
-<TMPL_IF HTML5><header class="header"><TMPL_ELSE><div class="header"></TMPL_IF>
+<section class="pageheader">
+<header class="header">
 <span>
 <span class="parentlinks">
 <TMPL_LOOP PARENTLINKS>
@@ -62,10 +62,10 @@
 <TMPL_VAR SEARCHFORM>
 </TMPL_IF>
 </TMPL_UNLESS>
-<TMPL_IF HTML5></header><TMPL_ELSE></div></TMPL_IF>
+</header>
 
 <TMPL_IF HAVE_ACTIONS>
-<TMPL_IF HTML5><nav class="actions"><TMPL_ELSE><div class="actions"></TMPL_IF>
+<nav class="actions">
 <ul>
 <TMPL_IF EDITURL>
 <li><a href="<TMPL_VAR EDITURL>" rel="nofollow">Edit</a></li>
@@ -95,11 +95,11 @@
 </TMPL_IF>
 </TMPL_IF>
 </ul>
-<TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
+</nav>
 </TMPL_IF>
 
 <TMPL_IF OTHERLANGUAGES>
-<TMPL_IF HTML5><nav id="otherlanguages"><TMPL_ELSE><div id="otherlanguages"></TMPL_IF>
+<nav id="otherlanguages">
 <ul>
 <TMPL_LOOP OTHERLANGUAGES>
 <li>
@@ -112,38 +112,38 @@
 </li>
 </TMPL_LOOP>
 </ul>
-<TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
+</nav>
 </TMPL_IF>
 
 <TMPL_UNLESS DYNAMIC>
 <TMPL_VAR TRAILS>
 </TMPL_UNLESS>
 
-<TMPL_IF HTML5></section><TMPL_ELSE></div></TMPL_IF>
+</section>
 
 <TMPL_UNLESS DYNAMIC>
 <TMPL_IF SIDEBAR>
-<TMPL_IF HTML5><aside class="sidebar"><TMPL_ELSE><div class="sidebar"></TMPL_IF>
+<aside class="sidebar">
 <TMPL_VAR SIDEBAR>
-<TMPL_IF HTML5></aside><TMPL_ELSE></div></TMPL_IF>
+</aside>
 </TMPL_IF>
 </TMPL_UNLESS>
 
 <div id="pagebody">
 
-<TMPL_IF HTML5><section<TMPL_ELSE><div</TMPL_IF> id="content" role="main">
+<section id="content" role="main">
 <TMPL_VAR CONTENT>
-<TMPL_IF HTML5></section><TMPL_ELSE></div></TMPL_IF>
+</section>
 
 <TMPL_IF ENCLOSURE>
-<TMPL_IF HTML5><section id="enclosure"><TMPL_ELSE><div id="enclosure"></TMPL_IF>
+<section id="enclosure">
 <a href="<TMPL_VAR ENCLOSURE>">Download</a>
-<TMPL_IF HTML5></section><TMPL_ELSE></div></TMPL_IF>
+</section>
 </TMPL_IF>
 
 <TMPL_UNLESS DYNAMIC>
 <TMPL_IF COMMENTS>
-<TMPL_IF HTML5><section<TMPL_ELSE><div</TMPL_IF> id="comments" role="complementary">
+<section id="comments" role="complementary">
 <TMPL_VAR COMMENTS>
 <TMPL_IF ADDCOMMENTURL>
 <div class="addcomment">
@@ -152,29 +152,29 @@
 <TMPL_ELSE>
 <div class="addcomment">Comments on this page are closed.</div>
 </TMPL_IF>
-<TMPL_IF HTML5></section><TMPL_ELSE></div></TMPL_IF>
+</section>
 </TMPL_IF>
 </TMPL_UNLESS>
 
 </div>
 
-<TMPL_IF HTML5><footer<TMPL_ELSE><div</TMPL_IF> id="footer" class="pagefooter" role="contentinfo">
+<footer id="footer" class="pagefooter" role="contentinfo">
 <TMPL_UNLESS DYNAMIC>
-<TMPL_IF HTML5><nav id="pageinfo"><TMPL_ELSE><div id="pageinfo"></TMPL_IF>
+<nav id="pageinfo">
 
 <TMPL_VAR TRAILS>
 
 <TMPL_IF TAGS>
-<TMPL_IF HTML5><nav class="tags"><TMPL_ELSE><div class="tags"></TMPL_IF>
+<nav class="tags">
 Tags:
 <TMPL_LOOP TAGS>
 <TMPL_VAR LINK>
 </TMPL_LOOP>
-<TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
+</nav>
 </TMPL_IF>
 
 <TMPL_IF BACKLINKS>
-<TMPL_IF HTML5><nav id="backlinks"><TMPL_ELSE><div id="backlinks"></TMPL_IF>
+<nav id="backlinks">
 Links:
 <TMPL_LOOP BACKLINKS>
 <a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>
@@ -188,7 +188,7 @@ Links:
 </span>
 </span>
 </TMPL_IF>
-<TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
+</nav>
 </TMPL_IF>
 
 <TMPL_IF COPYRIGHT>
@@ -210,13 +210,13 @@ Last edited <TMPL_VAR MTIME>
 <!-- Created <TMPL_VAR CTIME> -->
 </div>
 
-<TMPL_IF HTML5></nav><TMPL_ELSE></div></TMPL_IF>
+</nav>
 <TMPL_IF EXTRAFOOTER><TMPL_VAR EXTRAFOOTER></TMPL_IF>
 </TMPL_UNLESS>
 <!-- from <TMPL_VAR WIKINAME> -->
-<TMPL_IF HTML5></footer><TMPL_ELSE></div></TMPL_IF>
+</footer>
 
-<TMPL_IF HTML5></article><TMPL_ELSE></div></TMPL_IF>
+</article>
 
 </body>
 </html>
