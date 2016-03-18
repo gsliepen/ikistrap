@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="2000"
+   height="2008.2758"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="ikistrap.svg"
+   inkscape:export-filename="/home/users/guus/ikistrap/basewiki/favicon.ico"
+   inkscape:export-xdpi="1.4340661"
+   inkscape:export-ydpi="1.4340661">
+  <title
+     id="title4250">Ikistrap logo</title>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10000"
+     gridtolerance="10000"
+     guidetolerance="10000"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1383"
+     inkscape:window-height="1243"
+     id="namedview2996"
+     showgrid="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.54618416"
+     inkscape:cx="799.9404"
+     inkscape:cy="1154.2352"
+     inkscape:window-x="1117"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4278"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       dotted="false"
+       spacingx="62.5"
+       spacingy="62.6"
+       empspacing="4" />
+    <sodipodi:guide
+       position="0,0"
+       orientation="0,2000"
+       id="guide4280" />
+    <sodipodi:guide
+       position="2000,0"
+       orientation="-2008.2758,0"
+       id="guide4282" />
+    <sodipodi:guide
+       position="2000,2008.2758"
+       orientation="0,-2000"
+       id="guide4284" />
+    <sodipodi:guide
+       position="0,2008.2758"
+       orientation="2008.2758,0"
+       id="guide4286" />
+    <sodipodi:guide
+       position="0,0"
+       orientation="0,2000"
+       id="guide4288" />
+    <sodipodi:guide
+       position="2000,0"
+       orientation="-2008.2758,0"
+       id="guide4290" />
+    <sodipodi:guide
+       position="2000,2008.2758"
+       orientation="0,-2000"
+       id="guide4292" />
+    <sodipodi:guide
+       position="0,2008.2758"
+       orientation="2008.2758,0"
+       id="guide4294" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3820">
+      <stop
+         id="stop3822"
+         style="stop-color:#070135;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3824"
+         style="stop-color:#612d50;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       x1="314.62408"
+       y1="547.20599"
+       x2="427.37671"
+       y2="432.48389"
+       id="linearGradient3834"
+       xlink:href="#linearGradient3820"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-52,0)" />
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Ikistrap logo</dc:title>
+        <cc:license
+           rdf:resource="https://www.gnu.org/licenses/gpl-2.0.html" />
+        <dc:date>2016-03-19</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Guus Sliepen</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:description>A combination of the ikiwiki and Bootstrap logos.</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     transform="matrix(15.623041,0,0,15.623041,-3987.6024,-6644.8835)">
+    <rect
+       width="128.01605"
+       height="128.54576"
+       ry="20.679518"
+       x="255.23856"
+       y="425.32587"
+       id="rect3050"
+       style="fill:url(#linearGradient3834);fill-opacity:1;stroke:none" />
+    <g
+       transform="scale(1.0052013,0.99482561)"
+       id="text3836"
+       style="font-size:109.79650116px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" />
+  </g>
+  <g
+     id="g4273"
+     transform="matrix(1.0198245,0,0,1.0897903,-19.823031,-79.425585)"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
+    <path
+       id="text3685"
+       d="m 1625.0153,1570.6283 0,-683.54026 110.2967,0 0,-120.05098 -255.1082,0 0,803.59124 144.8115,0 m -888.37758,0 252.10673,-402.1708 124.55275,128.3045 0,273.8663 142.5609,0 0,-1132.98108 -142.5609,0 0,703.04858 -307.63014,-373.65874 -166.57077,0 257.35933,305.37974 -314.38351,498.2115 154.56561,0 m -327.13881,0 0,-683.54026 110.29684,0 0,-120.05098 -255.1083,0 0,803.59124 144.81146,0"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:149.19204712px;line-height:125%;font-family:'Trebuchet MS';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       id="rect3691"
+       d="M 1589.8326,437.64677 1484.8111,545.07364 1592.4302,650.28305 1697.4517,542.85618 1589.8326,437.64677 Z"
+       style="fill:#c00040;fill-opacity:0.94117647;stroke:none;stroke-width:1pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       id="rect3693"
+       d="M 371.16676,437.64732 266.14528,545.07419 373.76364,650.28288 478.78512,542.85601 371.16676,437.64732 Z"
+       style="fill:#980040;fill-opacity:1;stroke:none;stroke-width:1pt;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+  </g>
+  <rect
+     style="opacity:0;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.55577111;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect2154"
+     width="1470.333"
+     height="1467.2596"
+     x="264.83359"
+     y="270.50803" />
+</svg>
