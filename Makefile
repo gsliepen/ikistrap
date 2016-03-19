@@ -1,2 +1,2 @@
 all:
-	ikiwiki --setup example.setup
+	HTML_TIDY=./tidy.config ikiwiki --setup example.setup --refresh
