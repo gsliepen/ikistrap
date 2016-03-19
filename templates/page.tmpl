@@ -51,7 +51,7 @@
 					<TMPL_LOOP NAME="PARENTLINKS">
 					<li class="nav-item <TMPL_UNLESS NAME="DEPTH_0">hidden-md-down</TMPL_UNLESS>"><a class="nav-link" href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a></li>
 					</TMPL_LOOP>
-					<li class="nav-item"><a class="nav-link active <TMPL_IF HAS_PARENTLINKS>hidden-md-down</TMPL_IF>" href="<TMPL_VAR PAGEURL>"><TMPL_VAR TITLE><TMPL_IF ISTRANSLATION>&nbsp;(<TMPL_VAR PERCENTTRANSLATED>%)</TMPL_IF></a></li>
+					<li class="nav-item"><a class="nav-link active <TMPL_IF HAS_PARENTLINKS>hidden-md-down</TMPL_IF>" href="#"><TMPL_VAR TITLE><TMPL_IF ISTRANSLATION>&nbsp;(<TMPL_VAR PERCENTTRANSLATED>%)</TMPL_IF></a></li>
 				</ul>
 
 				<div class="collapse navbar-toggleable-xs" id="header-nav">
