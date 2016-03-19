@@ -107,3 +107,9 @@ blockquote {
 	border-left: 4px solid rgba(0,0,0,.1);
 	padding-left: 0.5em;
 }
+
+/* Fix image width in cards. */
+.card-img-top, .card-img-bottom {
+	width: 100%;
+	height: auto;
+}

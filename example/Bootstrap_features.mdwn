@@ -32,41 +32,40 @@ Put a border with soft round corners around your content.
 ## Card decks
 
 These require some more work.
-Unfortunately, using the `\[[!img]]` directive is not going to work here,
-because even though you can set the CSS class,
-it forces an absolute width and height in pixels.
-For images in cards to work properly, they should have `width="100%"`.
+You can use the `\[[!img]]` directive, but make sure to add `class="card-img-top"` or `class="card-img-bottom"` where appropriate.
+For images in cards to work properly, they need to have their width forced to 100% of their container.
+This is done in the `style.css` file that comes with ikistrap.
 
 Another issue is that due to all the nested HTML tags, even with `markdown="1"`, Markdown markup does not get parsed anymore.
 
 <div class="card-deck">
 <div class="card-deck-wrapper">
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Lemonshark.jpg/320px-Lemonshark.jpg" alt="Lemon shark" class="card-img-top" width="100%">
+[[!img Lemonshark.jpg alt="Lemon shark" class="card-img-top"]]
 <div class="card-block">
 <p class="card-text">
 A lemon shark and his little friends are out for a swim.
 </p>
-<a href="" class="btn btn-danger">Escape</a>
+<p><a href="#" class="btn btn-danger">Escape</a></p>
 </div>
 </div>
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/An%C3%A9mones_bijoux.JPG/320px-An%C3%A9mones_bijoux.JPG" alt="Anemones" class="card-img-top" width="100%">
+[[!img Anemones.jpg alt="Anemones" class="card-img-top"]]
 <div class="card-block">
 <p class="card-text">
 Anemones look really nice and are much less dangerous than lemon sharks.
 </p>
-<a href="" class="btn btn-success">Admire</a>
+<p><a href="#" class="btn btn-success">Admire</a></p>
 </div>
 </div>
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Chocolate_Chip_Sea_Star.jpg/320px-Chocolate_Chip_Sea_Star.jpg" alt="Sea star" class="card-img-top" width="100%">
+[[!img Sea_Star.jpg alt="Sea star" class="card-img-top"]]
 <div class="card-block">
 <p class="card-text">
 Sea stars are also less dangerous than lemon sharks, but they are slightly more dangerous than
 anemones, <em>especially</em> when stepped on.
 </p>
-<a href="" class="btn btn-warning">Sidestep</a>
+<p><a href="#" class="btn btn-warning">Sidestep</a></p>
 </div>
 </div>
 </div>
