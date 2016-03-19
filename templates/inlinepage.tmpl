@@ -1,64 +1,18 @@
-<article class="inlinepage">
-	<section class="inlineheader">
-		<TMPL_IF AUTHOR>
-		<span class="author">
-			<TMPL_IF AUTHORURL>
-			<a href="<TMPL_VAR AUTHORURL>"><TMPL_VAR AUTHOR></a>
-			<TMPL_ELSE>
-			<TMPL_VAR AUTHOR>
-			</TMPL_IF>
-		</span>
-		</TMPL_IF>
-		<header class="header">
+<article class="inlinepage card">
+	<div class="inlineheader card-header">
+		<header title="<TMPL_VAR TITLE>">
 			<TMPL_IF PERMALINK>
 			<a href="<TMPL_VAR PERMALINK>"><TMPL_VAR TITLE></a>
 			<TMPL_ELSE>
 			<a href="<TMPL_VAR PAGEURL>"><TMPL_VAR TITLE></a>
 			</TMPL_IF>
 		</header>
-	</section>
-
-	<section class="inlinecontent">
-		<TMPL_VAR CONTENT>
-	</section>
-
-	<TMPL_IF ENCLOSURE>
-	<section id="inlineenclosure">
-		<a href="<TMPL_VAR ENCLOSURE>">Download</a>
-	</section>
-	</TMPL_IF>
-
-	<footer class="inlinefooter">
-		<span class="pagedate">
-			Posted <TMPL_VAR CTIME>
-		</span>
-
-		<TMPL_IF TAGS>
-		<nav class="tags">
-			Tags:
-			<TMPL_LOOP TAGS>
-			<TMPL_VAR LINK>
-			</TMPL_LOOP>
-		</nav>
-		</TMPL_IF>
-
-		<TMPL_IF COPYRIGHT>
-		<div class="pagecopyright">
-			<TMPL_VAR COPYRIGHT>
-		</div>
-		</TMPL_IF>
-
-		<TMPL_IF LICENSE>
-		<div class="pagelicense">
-			License: <TMPL_VAR LICENSE>
-		</div>
-		</TMPL_IF>
 
 		<TMPL_IF HAVE_ACTIONS>
-		<nav class="actions">
+		<div class="actions">
 			<ul>
 				<TMPL_IF EDITURL>
-				<li><a href="<TMPL_VAR EDITURL>" rel="nofollow">Edit</a></li>
+				<li><a href="<TMPL_VAR EDITURL>" rel="nofollow"><i class="fa fa-pencil"></i>Edit</a></li>
 				</TMPL_IF>
 				<TMPL_IF COMMENTSLINK>
 				<li><TMPL_VAR COMMENTSLINK></li>
@@ -68,6 +22,55 @@
 				</TMPL_IF>
 				</TMPL_IF>
 			</ul>
+		</div>
+		</TMPL_IF>
+	</div>
+
+	<div class="inlinecontent card-block card-text">
+		<TMPL_VAR CONTENT>
+	</div>
+
+	<TMPL_IF ENCLOSURE>
+	<div id="inlineenclosure">
+		<a href="<TMPL_VAR ENCLOSURE>">Download</a>
+	</div>
+	</TMPL_IF>
+
+	<footer class="inlinefooter card-footer text-muted">
+		<div class="pageinfo">
+		<span class="pagedate">
+			Posted <TMPL_VAR CTIME>
+		</span>
+		<TMPL_IF AUTHOR>
+		by
+		<span class="author">
+			<TMPL_IF AUTHORURL>
+			<a href="<TMPL_VAR AUTHORURL>"><TMPL_VAR AUTHOR></a>
+			<TMPL_ELSE>
+			<TMPL_VAR AUTHOR>
+			</TMPL_IF>
+		</span>
+		</TMPL_IF>
+
+		<TMPL_IF COPYRIGHT>
+		<span class="pagecopyright">
+			<TMPL_VAR COPYRIGHT>
+		</span>
+		</TMPL_IF>
+
+		<TMPL_IF LICENSE>
+		<span class="pagelicense">
+			License: <TMPL_VAR LICENSE>
+		</span>
+		</TMPL_IF>
+		</div>
+
+		<TMPL_IF TAGS>
+		<nav class="tags">
+			<i class="fa fa-tag"></i>Tags:
+			<TMPL_LOOP TAGS>
+			<TMPL_VAR LINK>
+			</TMPL_LOOP>
 		</nav>
 		</TMPL_IF>
 	</footer>

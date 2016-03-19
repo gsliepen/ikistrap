@@ -1,2 +1,90 @@
+body, html {
+	height: 100%;
+}
+
+#header {
+	padding-bottom: 1em;
+}
+
 #notfooter {
+	min-height: 100%;
+	padding-bottom: 2em;
+}
+
+#footer {
+	position: relative;
+	margin-top: -2em;
+	height: 2em;
+	color: grey;
+	border-top: 1px solid lightgrey;
+}
+
+#pagedate {
+	float: right;
+}
+
+#header-left {
+	float: left;
+	display: inline;
+}
+
+#header-right {
+	float: right;
+	display: inline;
+}
+
+#searchform {
+	margin-left: 1em;
+}
+
+.actions {
+	display: inline;
+	float: right;
+}
+
+.actions ul, .actions li {
+	list-style-type: none;
+	display: inline;
+}
+
+.inlineheader {
+	display: flex;
+}
+
+.inlineheader header {
+	flex: 1 1 auto;
+}
+
+.inlineheader .actions {
+	flex: 0 1 auto;
+}
+
+.inlinefooter {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.inlinefooter .pageinfo {
+	flex: 1 1 auto;
+}
+
+.inlinefooter .tags {
+	flex: 0 1 auto;
+}
+
+table {
+	border: 1px solid grey;
+	padding: 0.5em;
+}
+
+.feedbutton {
+	background: #ff8000;
+	border-color: #e07000;
+	color: white;
+	font-weight: bold;
+}
+
+.feedbutton:hover {
+	background: #ffc080;
+	border-color: #e07000;
 }
