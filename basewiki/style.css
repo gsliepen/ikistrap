@@ -1,9 +1,12 @@
-body, html {
-	height: 100%;
-}
-
+/* There isn't much space between the Bootstrap navbar and the page content */
 #header {
 	padding-bottom: 1em;
+}
+
+/* Ensure the footer is pushed down to the bottom of the screen,
+ * if the main content doesn't fill it. */
+body, html {
+	height: 100%;
 }
 
 #notfooter {
@@ -23,30 +26,20 @@ body, html {
 	float: right;
 }
 
-#header-left {
-	float: left;
-	display: inline;
-}
-
-#header-right {
-	float: right;
-	display: inline;
-}
+/* Bootstrap's navbar packs everything without margins or padding.
+ * Ensure the search form has some space. */
 
 #searchform {
 	margin-left: 1em;
 }
 
-.actions {
-	display: inline;
-	float: right;
+.parentlinks {
+	margin-right: 1em;
 }
 
-.actions ul, .actions li {
-	list-style-type: none;
-	display: inline;
-}
-
+/* Alignment of header and footer items of the default inline pages.
+ * Using flexbox layout here, since it can wrap when things get too crowded.
+ * It's a bit better than floats. */
 .inlineheader {
 	display: flex;
 }
@@ -55,7 +48,7 @@ body, html {
 	flex: 1 1 auto;
 }
 
-.inlineheader .actions {
+.inlineheader {
 	flex: 0 1 auto;
 }
 
@@ -72,11 +65,22 @@ body, html {
 	flex: 0 1 auto;
 }
 
+.inline-actions {
+	display: inline;
+}
+
+.inline-actions ul, .inline-actions li {
+	list-style-type: none;
+	display: inline;
+}
+
+/* Quick and simple table style */
 table {
 	border: 1px solid grey;
 	padding: 0.5em;
 }
 
+/* Give RSS and Atom buttons an orange color */
 .feedbutton {
 	background: #ff8000;
 	border-color: #e07000;
@@ -87,4 +91,19 @@ table {
 .feedbutton:hover {
 	background: #ffc080;
 	border-color: #e07000;
+}
+
+/* Carousel alignment */
+.carousel-page {
+	margin: 1em;
+}
+
+.carousel-image {
+	margin: auto;
+}
+
+/* Bootstrap 4.0.0-alpha.2 forgot to define a blockquote style? */
+blockquote {
+	border-left: 4px solid rgba(0,0,0,.1);
+	padding-left: 0.5em;
 }

@@ -5,8 +5,8 @@
 	</div>
 	</TMPL_IF>
 
-	<div class="inlineheader card-header">
-		<header class="card-title comment-subject" title="<TMPL_VAR TITLE>">
+	<div class="commentheader card-header">
+		<header class="comment-subject" title="<TMPL_VAR TITLE>">
 			<TMPL_IF PERMALINK>
 			<a href="<TMPL_VAR PERMALINK>"><TMPL_VAR TITLE></a>
 			<TMPL_ELSE>
@@ -15,11 +15,11 @@
 		</header>
 	</div>
 
-	<div class="inlinecontent card-block card-text">
+	<div class="commentcontent card-block card-text">
 		<TMPL_VAR CONTENT>
 	</div>
 
-	<footer class="inlinefooter card-footer text-muted">
+	<footer class="commentfooter card-footer text-muted">
 		Posted <TMPL_VAR CTIME>
 		<TMPL_IF COMMENTUSER>
 			by

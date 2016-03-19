@@ -18,6 +18,9 @@
 	<TMPL_ELSE>
 	<link rel="stylesheet" href="<TMPL_VAR BASEURL>local.css" type="text/css" />
 	</TMPL_IF>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
 	<TMPL_UNLESS DYNAMIC>
 	<TMPL_IF EDITURL>
 	<link rel="alternate" type="application/x-wiki" title="Edit this page" href="<TMPL_VAR EDITURL>" />
@@ -42,69 +45,65 @@
 		<div id="header">
 		<header class="navbar navbar-dark bg-inverse navbar-full">
 			<div class="container">
-				<div id="header-left">
-					<span class="parentlinks">
-						<TMPL_LOOP PARENTLINKS>
-						<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a> <span style="color: grey;">|</span>
-						</TMPL_LOOP>
-					</span>
-					<span class="title">
-						<TMPL_VAR TITLE><TMPL_IF ISTRANSLATION>&nbsp;(<TMPL_VAR PERCENTTRANSLATED>%)</TMPL_IF>
-					</span>
-				</div>
+				<button type="button" class="navbar-toggler hidden-sm-up pull-xs-right" data-toggle="collapse" data-target="#header-nav">&#9776;</button>
 
-				<div id="header-right">
-					<TMPL_IF HAVE_ACTIONS>
-					<nav class="actions">
-						<ul>
-							<TMPL_IF EDITURL>
-							<li><a href="<TMPL_VAR EDITURL>" rel="nofollow"><i class="fa fa-pencil"></i>Edit</a></li>
-							</TMPL_IF>
-							<TMPL_IF RECENTCHANGESURL>
-							<li><a href="<TMPL_VAR RECENTCHANGESURL>">RecentChanges</a></li>
-							</TMPL_IF>
-							<TMPL_IF HISTORYURL>
-							<li><a href="<TMPL_VAR HISTORYURL>">History</a></li>
-							</TMPL_IF>
-							<TMPL_IF GETSOURCEURL>
-							<li><a href="<TMPL_VAR GETSOURCEURL>">Source</a></li>
-							</TMPL_IF>
-							<TMPL_IF PREFSURL>
-							<li><a href="<TMPL_VAR PREFSURL>"><i class="fa fa-cog"></i>Preferences</a></li>
-							</TMPL_IF>
-							<TMPL_IF ACTIONS>
-							<TMPL_LOOP ACTIONS>
-							<li><TMPL_VAR ACTION></li>
-							</TMPL_LOOP>
-							</TMPL_IF>
-							<TMPL_IF COMMENTSLINK>
-							<li><TMPL_VAR COMMENTSLINK></li>
-							<TMPL_ELSE>
-							<TMPL_IF DISCUSSIONLINK>
-							<li><TMPL_VAR DISCUSSIONLINK></li>
-							</TMPL_IF>
-							</TMPL_IF>
-						</ul>
-					</nav>
-					</TMPL_IF>
+				<ul class="nav navbar-nav">
+					<TMPL_LOOP NAME="PARENTLINKS">
+					<li class="nav-item <TMPL_UNLESS NAME="DEPTH_0">hidden-md-down</TMPL_UNLESS>"><a class="nav-link" href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a></li>
+					</TMPL_LOOP>
+					<li class="nav-item"><a class="nav-link active <TMPL_IF HAS_PARENTLINKS>hidden-md-down</TMPL_IF>" href="<TMPL_VAR PAGEURL>"><TMPL_VAR TITLE><TMPL_IF ISTRANSLATION>&nbsp;(<TMPL_VAR PERCENTTRANSLATED>%)</TMPL_IF></a></li>
+				</ul>
 
+				<div class="collapse navbar-toggleable-xs" id="header-nav">
 					<TMPL_UNLESS DYNAMIC>
 					<TMPL_IF SEARCHFORM>
-					<div class="pull-xs-right">
-						<TMPL_VAR SEARCHFORM>
-					</div>
+					<TMPL_VAR SEARCHFORM>
 					</TMPL_IF>
 					</TMPL_UNLESS>
 
 					<TMPL_IF OTHERLANGUAGES>
-					<nav id="otherlanguages">
-						<ul>
+					<nav id="otherlanguages" class="pull-xs-right">
+						<ul class="nav navbar-nav">
 							<TMPL_LOOP OTHERLANGUAGES>
-							<li>
-								<a href="<TMPL_VAR URL>"><TMPL_VAR LANGUAGE></a>
+							<li class="nav-item">
+								<a class="nav-link" href="<TMPL_VAR URL>"><TMPL_VAR LANGUAGE></a>
 								<TMPL_IF MASTER>(master)<TMPL_ELSE>&nbsp;(<TMPL_VAR PERCENT>%)</TMPL_IF>
 							</li>
 							</TMPL_LOOP>
+						</ul>
+					</nav>
+					</TMPL_IF>
+
+					<TMPL_IF HAVE_ACTIONS>
+					<nav class="actions pull-xs-right">
+						<ul class="nav navbar-nav">
+							<TMPL_IF EDITURL>
+							<li class="nav-item"><a class="nav-link" href="<TMPL_VAR EDITURL>" rel="nofollow"><i class="fa fa-pencil"></i>Edit</a></li>
+							</TMPL_IF>
+							<TMPL_IF RECENTCHANGESURL>
+							<li class="nav-item"><a class="nav-link" href="<TMPL_VAR RECENTCHANGESURL>">RecentChanges</a></li>
+							</TMPL_IF>
+							<TMPL_IF HISTORYURL>
+							<li class="nav-item"><a class="nav-link" href="<TMPL_VAR HISTORYURL>">History</a></li>
+							</TMPL_IF>
+							<TMPL_IF GETSOURCEURL>
+							<li class="nav-item"><a class="nav-link" href="<TMPL_VAR GETSOURCEURL>">Source</a></li>
+							</TMPL_IF>
+							<TMPL_IF PREFSURL>
+							<li class="nav-item"><a class="nav-link" href="<TMPL_VAR PREFSURL>"><i class="fa fa-cog"></i>Preferences</a></li>
+							</TMPL_IF>
+							<TMPL_IF ACTIONS>
+							<TMPL_LOOP ACTIONS>
+							<li class="nav-item nav-link"><TMPL_VAR ACTION></li>
+							</TMPL_LOOP>
+							</TMPL_IF>
+							<TMPL_IF COMMENTSLINK>
+							<li class="nav-item nav-link"><TMPL_VAR COMMENTSLINK></li>
+							<TMPL_ELSE>
+							<TMPL_IF DISCUSSIONLINK>
+							<li class="nav-item nav-link"><TMPL_VAR DISCUSSIONLINK></li>
+							</TMPL_IF>
+							</TMPL_IF>
 						</ul>
 					</nav>
 					</TMPL_IF>
