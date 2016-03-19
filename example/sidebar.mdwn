@@ -1,0 +1,9 @@
+This is the sidebar.
+
+* [[/index]]
+* [[ikiwiki]]
+* [[sandbox]]
+* [[shortcuts]]
+* [[templates]]
+
+``Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tortor augue, lacinia eget libero eget, imperdiet scelerisque neque. Nam pretium dui sit amet rhoncus commodo. Sed eget faucibus purus, vel vulputate nulla. Sed accumsan odio ac dui vulputate, non venenatis velit iaculis. Quisque efficitur orci in tellus tincidunt, non maximus nisi finibus. Vestibulum tristique id eros ut dictum. Integer congue euismod metus, at feugiat nunc sagittis quis. Curabitur iaculis mi eget volutpat sodales. Ut nec dui et mi cursus tempor ac et sem. Nulla felis neque, congue tristique ultricies a, vehicula a ante.''

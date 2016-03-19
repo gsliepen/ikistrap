@@ -1,0 +1,9 @@
+# Inline pages
+
+Here is an example of inline pages using the default inlining theme:
+
+[[!inline pages="sample_text/* and !*/Discussion" reverse="yes" limit="3"]]
+
+Here is an example of inlining with actions enabled:
+
+[[!inline pages="sample_text/* and !*/Discussion" reverse="yes" skip="3" limit="2" actions="1"]]
