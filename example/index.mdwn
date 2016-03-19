@@ -9,8 +9,15 @@ It uses Bootstrap 4 and Fonts Awesome.
 Ikistrap has the following features:
 
 * Good use of HTML5 semantic elements.
+* Responsive layout.
+* Standards-compliant.
+* Compatible with text-only browsers.
 * Header supporting parentlinks, wiki actions, search form, language selection and trails.
 * Sidebar styled as a Boostrap 4 card, using the Bootstrap 4 grid system.
 * Footer that is pushed down to the bottom of the screen with tags, backlinks, copyright, license and modification date.
 * [[Inline pages]] that are by default styled as Bootstrap 4 cards.
 * [[Comments]]
+
+Note that ikistrap doesn't add any special support for Bootstrap to the Markdown language.
+If you want to make use of [[Bootstrap features]] inside your text, you will have to manually add the appropriate HTML tags.
+
