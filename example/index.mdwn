@@ -17,6 +17,7 @@ Ikistrap has the following features:
 * Footer that is pushed down to the bottom of the screen with tags, backlinks, copyright, license and modification date.
 * [[Inline pages]] that are by default styled as Bootstrap 4 cards.
 * [[Comments]]
+* [[Calendars]]
 
 Note that ikistrap doesn't add any special support for Bootstrap to the Markdown language.
 If you want to make use of [[Bootstrap features]] inside your text, you will have to manually add the appropriate HTML tags.

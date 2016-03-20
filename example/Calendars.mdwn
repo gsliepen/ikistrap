@@ -1,0 +1,10 @@
+# Calendar
+
+This is an example of the ikiwiki calendar function.
+Here is a monthly calendar:
+
+[[!calendar type="month"]]
+
+And this is a yearly calendar:
+
+[[!calendar type="year"]]
