@@ -1,6 +1,6 @@
 /* There isn't much space between the Bootstrap navbar and the page content */
 #header {
-	padding-bottom: 1em;
+	margin-bottom: 1em;
 }
 
 /* Ensure the footer is pushed down to the bottom of the screen,
@@ -74,10 +74,86 @@ body, html {
 	display: inline;
 }
 
-/* Quick and simple table style */
-table {
-	border: 1px solid grey;
+/* Popups */
+/* popup template and backlinks hiding */
+.popup .balloon,
+.popup .paren,
+.popup .expand {
+	position: absolute;
+	z-index: 1000;
+	display: none;
+	color: #373a3c;
+	text-align: left;
+	list-style: none;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, .15);
+	border-radius: .25rem;
+}
+
+.balloon ul {
+	list-style: none;
+	margin: 0;
 	padding: 0.5em;
+}
+
+.popup:hover .balloon,
+.popup:focus .balloon {
+	display: inline;
+}
+
+/* Table style, similar to Bootstrap .table-border and with .table-inverse headers */
+table {
+	margin-bottom: 1em;
+	background-color: white;
+	display: block;
+	overflow: auto;
+}
+
+table td, table th {
+	border: 1px solid #eceeef;
+	padding: 0.5em;
+}
+
+table th {
+	color: #eceeef;
+	background-color: #373a3c;
+	border-color: #55595c;
+}
+
+table tr:hover {
+	background-color: #f5f5f5;
+}
+
+/* Rounded corners on tables */
+table {
+	border-collapse: separate;
+}
+
+table tr:first-child td:first-child, table tr:first-child th:first-child {
+	border-top-left-radius: 0.25rem;
+}
+table tr:first-child td:last-child, table tr:first-child th:last-child {
+	border-top-right-radius: 0.25rem;
+}
+table tr:last-child td:first-child {
+	border-bottom-left-radius: 0.25rem;
+}
+table tr:last-child td:last-child {
+	border-bottom-right-radius: 0.25rem;
+}
+
+/* Improve look of calendars */
+.month-calendar td,
+.month-calendar th,
+.year-calendar td,
+.year-calendar th {
+	min-width: 2.5em;
+	text-align: center;
+}
+
+.month-calendar-day-link, .year-calendar-month-link {
+  background-color: #d9edf7;
 }
 
 /* Give RSS and Atom buttons an orange color */
