@@ -1,10 +1,10 @@
 # IkiWiki::Setup::Yaml - YAML formatted setup file
 #
 # Setup file for ikiwiki.
-#
+# 
 # Passing this to ikiwiki --setup will make ikiwiki generate
 # wrappers and build the wiki.
-#
+# 
 # Remember to re-run ikiwiki --setup any time you edit this file.
 #
 # name of the wiki
@@ -22,7 +22,7 @@ destdir: example.html
 # base url to the wiki
 url: file://example.html/
 # url to the ikiwiki.cgi
-cgiurl: 'cgi'
+cgiurl: cgi
 # do not adjust cgiurl if CGI is accessed via different URL
 reverse_proxy: 0
 # filename of cgi wrapper to generate
@@ -42,7 +42,6 @@ add_plugins:
 - 404
 - goodstuff
 - favicon
-- htmltidy
 - poll
 - google
 - sidebar
@@ -50,6 +49,7 @@ add_plugins:
 - typography
 - comments
 - calendar
+- ikistrap
 # plugins to disable
 disable_plugins: []
 # additional directory to search for template files
@@ -95,7 +95,7 @@ umask: 18
 # extra library and plugin directories
 libdirs: []
 # extra library and plugin directory (searched after libdirs)
-libdir: plugins
+libdir: lib
 # environment variables
 ENV: {}
 # time zone name
@@ -189,7 +189,7 @@ pingurl: []
 
 ######################################################################
 # format plugins
-#   (creole, highlight, hnb, html, mdwn, otl, rawhtml, textile, txt)
+#   (creole, highlight, hnb, html, mdwn, otl, rawhtml, rst, textile, txt)
 ######################################################################
 
 # highlight plugin
@@ -233,13 +233,13 @@ multimarkdown: 1
 # underlay plugin
 # extra underlay directories to add
 #add_underlays:
-#- /home/users/guus/wiki.underlay
+#- /home/guus/wiki.underlay
 
 ######################################################################
 # web plugins
-#   (404, attachment, comments, editdiff, edittemplate, getsource, google,
-#    goto, mirrorlist, remove, rename, repolist, search, theme, userlist,
-#    websetup, wmd)
+#   (404, attachment, comments, editdiff, edittemplate, google, goto,
+#    ikistrap, mirrorlist, remove, rename, repolist, search, theme,
+#    userlist, websetup, wmd)
 ######################################################################
 
 # attachment plugin
@@ -250,11 +250,11 @@ multimarkdown: 1
 
 # comments plugin
 # PageSpec of pages where comments are allowed
-comments_pagespec: 'comments and !*/Discussion'
+comments_pagespec: comments and !*/Discussion
 # PageSpec of pages where posting new comments is not allowed
-#comments_closed_pagespec: blog/controversial or blog/flamewar
+comments_closed_pagespec: ''
 # Base name for comments, e.g. "comment_" for pages like "sandbox/comment_12"
-#comments_pagename: comment_
+comments_pagename: comment_
 # Interpret directives in comments?
 #comments_allowdirectives: 0
 # Allow anonymous commenters to set an author name?
@@ -262,11 +262,11 @@ comments_pagespec: 'comments and !*/Discussion'
 # commit comments to the VCS
 comments_commit: 1
 # Restrict formats for comments to (no restriction if empty)
-#comments_allowformats: mdwn txt
+comments_allowformats: ''
 
-# getsource plugin
-# Mime type for returned source.
-#getsource_mimetype: text/plain; charset=utf-8
+# ikistrap plugin
+# install Bootstrap css and js files locally instead of using bootstrapcdn?
+#bootstrap_local: 0
 
 # mirrorlist plugin
 # list of mirrors
@@ -310,7 +310,7 @@ comments_commit: 1
 # base of the archives hierarchy
 archivebase: archives
 # PageSpec of pages to include in the archives, if option `calendar_autocreate` is true.
-#archive_pagespec: page(posts/*) and !*/Discussion
+archive_pagespec: '*'
 # autocreate new calendar pages?
 calendar_autocreate: 1
 # if set, when building calendar pages, also build pages of year and month when no pages were published (building empty calendars).
@@ -348,7 +348,7 @@ calendar_fill_gaps: 0
 #    filecheck, flattr, goodstuff, htmlbalance, localstyle, loginselector,
 #    notifyemail, pagetemplate, pingee, pinger, prettydate, recentchanges,
 #    recentchangesdiff, relativedate, rsync, sidebar, smiley,
-#    sortnaturally, tag, testpagespec, trail, transient, typography)
+#    sortnaturally, tag, testpagespec, trail, transient)
 ######################################################################
 
 # aggregate plugin
@@ -398,7 +398,3 @@ tagbase: tag
 #tag_autocreate: 1
 # commit autocreated tag pages
 tag_autocreate_commit: 1
-
-# typography plugin
-# Text::Typography attributes value
-#typographyattributes: 3

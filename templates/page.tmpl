@@ -10,17 +10,25 @@
 	<title><TMPL_VAR TITLE></title>
 	<TMPL_IF RESPONSIVE_LAYOUT><meta name="viewport" content="width=device-width, initial-scale=1" /></TMPL_IF>
 	<TMPL_IF FAVICON><link rel="icon" href="<TMPL_VAR BASEURL><TMPL_VAR FAVICON>" type="image/x-icon" /></TMPL_IF>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" type="text/css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css" />
+	<TMPL_IF BOOTSTRAP_LOCAL>
+	<link rel="stylesheet" href="<TMPL_VAR BASEURL>css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="<TMPL_VAR BASEURL>css/font-awesome.min.css" type="text/css" />
+	<script src="<TMPL_VAR BASEURL>js/jquery.min.js"></script>
+	<script src="<TMPL_VAR BASEURL>js/tether.min.js"></script>
+	<script src="<TMPL_VAR BASEURL>js/bootstrap.min.js"></script>
+	<TMPL_ELSE>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+	</TMPL_IF>
 	<link rel="stylesheet" href="<TMPL_VAR BASEURL>style.css" type="text/css" />
 	<TMPL_IF LOCAL_CSS>
 	<link rel="stylesheet" href="<TMPL_VAR BASEURL><TMPL_VAR LOCAL_CSS>" type="text/css" />
 	<TMPL_ELSE>
 	<link rel="stylesheet" href="<TMPL_VAR BASEURL>local.css" type="text/css" />
 	</TMPL_IF>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
 	<TMPL_UNLESS DYNAMIC>
 	<TMPL_IF EDITURL>
 	<link rel="alternate" type="application/x-wiki" title="Edit this page" href="<TMPL_VAR EDITURL>" />

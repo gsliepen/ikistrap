@@ -121,6 +121,15 @@ If you only want to show images, use `template="carouselimage"`, and select your
 </div>
 </p>
 
+## Progress bars
+
+Ikistrap also provides a progress directive which works in the same way as the progress plugin,
+but it also allows an extra class to be specified to change the style per bar.
+
+[[!progress  totalpages="* and !*/Discussion" donepages="*/Discussion"]]
+[[!progress percent="33%"]]
+[[!progress percent="66%" class="progress-success progress-striped"]]
+
 ## Other stuff
 
 Goes here.
