@@ -37,7 +37,7 @@ sub check($$) {
 }
 
 sub refresh() {
-	exit 0 unless($config{bootstrap_local});
+	return 0 unless($config{bootstrap_local});
 	mkdir("$config{destdir}/css");
 	mkdir("$config{destdir}/js");
 	mkdir("$config{destdir}/fonts");
