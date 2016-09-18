@@ -1,3 +1,5 @@
+<!-- -*- mode: html -*- -->
+<div class="card">
 [[!meta author="""<TMPL_VAR AUTHOR>"""]]
 <TMPL_IF AUTHORURL>
 [[!meta authorurl="""<TMPL_VAR AUTHORURL>"""]]
@@ -6,7 +8,19 @@
 <TMPL_IF PERMALINK>
 [[!meta permalink="<TMPL_VAR PERMALINK>"]]
 </TMPL_IF>
-<div id="change-<TMPL_VAR REV>" class="metadata">
+<div id="change-<TMPL_VAR REV>" class="card-block">
+  <h4 class="card-title"><TMPL_VAR TITLE></h4>
+  <TMPL_IF MESSAGE>
+    <p class="card-text">
+      <TMPL_LOOP MESSAGE>
+	<TMPL_IF LINE>
+	  <TMPL_VAR LINE><br />
+	</TMPL_IF>
+      </TMPL_LOOP>
+    </p>
+  </TMPL_IF>
+
+  <p class="card-text">
 	<span class="desc"><br />Changed pages:</span>
 	<span class="pagelinks">
 		<TMPL_UNLESS HAS_DIFFURL>
@@ -19,32 +33,14 @@
 		<TMPL_ELSE><TMPL_VAR LINK></TMPL_IF>
 		</TMPL_LOOP>
 	</span>
-	<span class="desc"><br />Changed by:</span>
-	<span class="committer">
-		<TMPL_IF AUTHORURL>
-		<a href="<TMPL_VAR AUTHORURL>" rel="nofollow"><TMPL_VAR USER></a>
-		<TMPL_ELSE>
-		<TMPL_VAR USER>
-		</TMPL_IF>
-	</span>
-	<span class="desc"><br />Commit type:</span>
-	<span class="committype"><TMPL_VAR COMMITTYPE></span>
-	<span class="desc"><br />Date:</span>
-	<span class="changedate"><TMPL_VAR COMMITDATE></span>
+
 	<span class="desc"><br /></span>
 	<TMPL_IF REVERTURL>
 	<span class="revert">
 		<a href="<TMPL_VAR REVERTURL>" title="revert" rel="nofollow">[[revert|wikiicons/revert.png]]</a>
 	</span>
 	</TMPL_IF>
-</div>
-
-<div class="changelog">
-	<TMPL_LOOP MESSAGE>
-	<TMPL_IF LINE>
-	<TMPL_VAR LINE><br />
-	</TMPL_IF>
-	</TMPL_LOOP>
+  </p>
 </div>
 
 <TMPL_IF DIFF>
@@ -56,3 +52,15 @@
 	<pre><TMPL_VAR DIFF></pre>
 </div>
 </TMPL_IF>
+
+  <div class="card-footer text-muted"><small>
+      By
+      <TMPL_IF AUTHORURL>
+	<a href="<TMPL_VAR AUTHORURL>" rel="nofollow"><TMPL_VAR USER></a>
+      <TMPL_ELSE>
+	  <TMPL_VAR USER>
+      </TMPL_IF>
+      on
+      <TMPL_VAR COMMITDATE>
+  </small></div>
+</div>
