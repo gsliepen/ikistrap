@@ -26,6 +26,13 @@ sub getsetup() {
 			default => 0,
 			rebuild => 1,
 		},
+		bootstrap_js => {
+			description => "Load Bootstrap's Javascript helpers?",
+			example => 0,
+			type => "boolean",
+			default => 1,
+			rebuild => 1,
+		}
 }
 
 sub check($$) {
@@ -39,7 +46,6 @@ sub check($$) {
 sub refresh() {
 	return 0 unless($config{bootstrap_local});
 	mkdir("$config{destdir}/css");
-	mkdir("$config{destdir}/js");
 	mkdir("$config{destdir}/fonts");
 	check("css/bootstrap.min.css", "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css");
 	check("js/bootstrap.min.js", "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js");
@@ -49,6 +55,9 @@ sub refresh() {
 	check("fonts/fontawesome-webfont.woff", "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.woff");
 	check("fonts/fontawesome-webfont.ttf", "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.ttf");
 	check("fonts/fontawesome-webfont.svg", "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.svg");
+
+	return 0 unless($config{bootstrap_js});
+	mkdir("$config{destdir}/js");
 	check("js/jquery.min.js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js");
 	check("js/tether.min.js", "https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js");
 }
@@ -57,7 +66,7 @@ sub pagetemplate(@) {
 	my %params = @_;
 	my $template = $params{template};
 
-	$template->param(bootstrap_local => $config{bootstrap_local});
+	$template->param(bootstrap_local => $config{bootstrap_local}, bootstrap_js => $config{bootstrap_js});
 }
 
 # Emulate the progress plugin, but do it the HTML5 + Bootstrap way.
