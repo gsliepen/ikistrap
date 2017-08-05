@@ -159,14 +159,13 @@ table tr:last-child td:last-child {
 /* Give RSS and Atom buttons an orange color */
 .feedbutton {
 	background: #ff8000;
-	border-color: #e07000;
+	border-color: #e07000 !important;
 	color: white;
 	font-weight: bold;
 }
 
 .feedbutton:hover {
 	background: #ffc080;
-	border-color: #e07000;
 }
 
 /* Carousel alignment */
