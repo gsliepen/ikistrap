@@ -31,7 +31,6 @@ Span elements work inside Markdown headings.
 Put a border with soft round corners around your content.
 </div>
 </div>
-<p/>
 
 
 ## Card decks
@@ -73,7 +72,6 @@ anemones, <em>especially</em> when stepped on.
 <div class="card-footer"><a href="#" class="btn btn-warning">Sidestep</a></div>
 </div>
 </div>
-<p/>
 
 
 ## Card columns
@@ -84,7 +82,6 @@ and using `\[[!inline]]` with `template="simplecard"` to generate the cards.
 <div class="card-columns">
 [[!inline pages="sample_text/* and !*/Discussion" template="simplecard" feeds="no"]]
 </div>
-<p/>
 
 
 ## Carousel
