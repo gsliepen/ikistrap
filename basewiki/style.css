@@ -159,7 +159,7 @@ table tr:last-child td:last-child {
 /* Give RSS and Atom buttons an orange color */
 .feedbutton {
 	background: #ff8000;
-	border-color: #e07000 !important;
+	border-color: #e07000;
 	color: white;
 	font-weight: bold;
 }

@@ -10,19 +10,18 @@
 	<title><TMPL_VAR TITLE></title>
 	<TMPL_IF RESPONSIVE_LAYOUT><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /></TMPL_IF>
 	<TMPL_IF FAVICON><link rel="icon" href="<TMPL_VAR BASEURL><TMPL_VAR FAVICON>" type="image/x-icon" /></TMPL_IF>
-	<link rel="stylesheet" href="<TMPL_VAR BASEURL>style.css" type="text/css" />
-	<TMPL_IF LOCAL_CSS>
-	<link rel="stylesheet" href="<TMPL_VAR BASEURL><TMPL_VAR LOCAL_CSS>" type="text/css" />
-	<TMPL_ELSE>
-	<link rel="stylesheet" href="<TMPL_VAR BASEURL>local.css" type="text/css" />
-	</TMPL_IF>
-
 	<TMPL_IF BOOTSTRAP_LOCAL>
 	<link rel="stylesheet" href="<TMPL_VAR BASEURL>css/bootstrap.min.css" type="text/css" />
 	<link rel="stylesheet" href="<TMPL_VAR BASEURL>css/font-awesome.min.css" type="text/css" />
 	<TMPL_ELSE>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" type="text/css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" type="text/css" />
+	</TMPL_IF>
+	<link rel="stylesheet" href="<TMPL_VAR BASEURL>style.css" type="text/css" />
+	<TMPL_IF LOCAL_CSS>
+	<link rel="stylesheet" href="<TMPL_VAR BASEURL><TMPL_VAR LOCAL_CSS>" type="text/css" />
+	<TMPL_ELSE>
+	<link rel="stylesheet" href="<TMPL_VAR BASEURL>local.css" type="text/css" />
 	</TMPL_IF>
 	<TMPL_UNLESS DYNAMIC>
 	<TMPL_IF EDITURL>
