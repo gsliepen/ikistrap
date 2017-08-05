@@ -265,8 +265,10 @@ comments_commit: 1
 comments_allowformats: ''
 
 # ikistrap plugin
-# install Bootstrap css and js files locally instead of using bootstrapcdn?
+# Install Bootstrap css and js files locally instead of using bootstrapcdn?
 #bootstrap_local: 0
+# Load Bootstrap's Javascript helpers?
+#bootstrap_js: 1
 
 # mirrorlist plugin
 # list of mirrors

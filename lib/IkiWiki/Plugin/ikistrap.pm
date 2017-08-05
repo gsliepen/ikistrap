@@ -6,10 +6,17 @@ use strict;
 use IkiWiki 3.00;
 
 sub import {
+	hook(type => "checkconfig", id => "ikistrap", call => \&checkconfig);
 	hook(type => "getsetup", id => "ikistrap", call => \&getsetup);
 	hook(type => "refresh", id => "ikistrap", call => \&refresh);
 	hook(type => "pagetemplate", id => "ikistrap", call => \&pagetemplate);
 	hook(type => "preprocess", id => "progress", call => \&progress);
+}
+
+sub checkconfig() {
+        if (! defined $config{bootstrap_js}) {
+                $config{bootstrap_js} = 1;
+        }
 }
 
 sub getsetup() {
@@ -20,7 +27,7 @@ sub getsetup() {
 			safe => 1,
 		},
 		bootstrap_local => {
-			description => "install Bootstrap css and js files locally instead of using bootstrapcdn?",
+			description => "Install Bootstrap css and js files locally instead of using bootstrapcdn?",
 			example => 0,
 			type => "boolean",
 			default => 0,
@@ -66,7 +73,8 @@ sub pagetemplate(@) {
 	my %params = @_;
 	my $template = $params{template};
 
-	$template->param(bootstrap_local => $config{bootstrap_local}, bootstrap_js => $config{bootstrap_js});
+	$template->param(bootstrap_js => $config{bootstrap_js});
+	$template->param(bootstrap_local => $config{bootstrap_local});
 }
 
 # Emulate the progress plugin, but do it the HTML5 + Bootstrap way.
