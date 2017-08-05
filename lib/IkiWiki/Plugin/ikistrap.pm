@@ -53,20 +53,20 @@ sub check($$) {
 sub refresh() {
 	return 0 unless($config{bootstrap_local});
 	mkdir("$config{destdir}/css");
-	mkdir("$config{destdir}/js");
 	mkdir("$config{destdir}/fonts");
-	check("css/bootstrap.min.css", "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css");
-	check("js/bootstrap.min.js", "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js");
-	check("css/font-awesome.min.css", "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
-	check("fonts/fontawesome-webfont.eot", "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.eot");
-	check("fonts/fontawesome-webfont.woff2", "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.woff2");
-	check("fonts/fontawesome-webfont.woff", "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.woff");
-	check("fonts/fontawesome-webfont.ttf", "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.ttf");
-	check("fonts/fontawesome-webfont.svg", "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.svg");
+	check("css/bootstrap.min.css", "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css");
+	check("css/font-awesome.min.css", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+	check("fonts/fontawesome-webfont.eot", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot");
+	check("fonts/fontawesome-webfont.woff2", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2");
+	check("fonts/fontawesome-webfont.woff", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff");
+	check("fonts/fontawesome-webfont.ttf", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf");
+	check("fonts/fontawesome-webfont.svg", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg");
 
 	return 0 unless($config{bootstrap_js});
-	check("js/jquery.min.js", "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js");
-	check("js/tether.min.js", "https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js");
+	mkdir("$config{destdir}/js");
+	check("js/jquery.min.js", "https://code.jquery.com/jquery-3.1.1.slim.min.js");
+	check("js/tether.min.js", "https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js");
+	check("js/bootstrap.min.js", "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js");
 }
 
 sub pagetemplate(@) {
@@ -107,13 +107,13 @@ sub progress(@) {
 		error(gettext("need either `percent` or `totalpages` and `donepages` parameters"));
 	}
 
-	my $class = "progress";
+	my $class = "progress-bar";
 	if (defined $params{class}) {
 		$class .= " $params{class}";
 	}
 
 	return <<EODIV
-<progress class="$class" value="$value" max="$max">$fill</progress>
+<p><div class="progress"><div class="$class" role="progressbar" style="width: $value%" aria-valuenow="$value" aria-valuemin="0" aria-valuemax="$max">$fill</div></div></p>
 EODIV
 }
 

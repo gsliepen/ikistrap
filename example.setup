@@ -51,7 +51,8 @@ add_plugins:
 - calendar
 - ikistrap
 # plugins to disable
-disable_plugins: []
+disable_plugins:
+- htmlscrubber
 # additional directory to search for template files
 templatedir: templates
 # base wiki source location

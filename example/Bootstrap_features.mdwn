@@ -3,7 +3,7 @@
 This page will contain a display of various features from Bootstrap.
 They require some manual HTML tags.
 Note that not all Markdown parsers allow Markdown markup inside all HTML tags.
-In the case of ikiwiki, adding `markdown="1"` to `div` elements usually allows markup to be used inside them.
+In the case of MultiMarkdown, adding `markdown="1"` to outer `div` elements usually allows markup to be used inside them.
 For a full list of features provided by Bootstrap 4, go to <http://v4-alpha.getbootstrap.com/getting-started/introduction/>.
 
 <div class="jumbotron" markdown="1">
@@ -18,15 +18,20 @@ You can still use Markdown syntax inside HTML blocks, if you are careful.
 <a class="btn btn-primary btn-large" href="#">Button</a>
 </div>
 
-## Labels <span class="label label-info">Hi!</span>
+
+## Badges <span class="badge badge-info">Hi!</span>
 
 Span elements work inside Markdown headings.
 
-<div class="card card-block" markdown="1">
+
+<div class="card" markdown="1">
+<div class="card-block">
 ## Cards
 
 Put a border with soft round corners around your content.
 </div>
+</div>
+<p/>
 
 
 ## Card decks
@@ -39,15 +44,14 @@ This is done in the `style.css` file that comes with ikistrap.
 Another issue is that due to all the nested HTML tags, even with `markdown="1"`, Markdown markup does not get parsed anymore.
 
 <div class="card-deck">
-<div class="card-deck-wrapper">
 <div class="card">
 [[!img Lemonshark.jpg alt="Lemon shark" class="card-img-top"]]
 <div class="card-block">
 <p class="card-text">
 A lemon shark and his little friends are out for a swim.
 </p>
-<p><a href="#" class="btn btn-danger">Escape</a></p>
 </div>
+<div class="card-footer"><a href="#" class="btn btn-danger">Escape</a></div>
 </div>
 <div class="card">
 [[!img Anemones.jpg alt="Anemones" class="card-img-top"]]
@@ -55,8 +59,8 @@ A lemon shark and his little friends are out for a swim.
 <p class="card-text">
 Anemones look really nice and are much less dangerous than lemon sharks.
 </p>
-<p><a href="#" class="btn btn-success">Admire</a></p>
 </div>
+<div class="card-footer"><a href="#" class="btn btn-success">Admire</a></div>
 </div>
 <div class="card">
 [[!img Sea_Star.jpg alt="Sea star" class="card-img-top"]]
@@ -65,11 +69,12 @@ Anemones look really nice and are much less dangerous than lemon sharks.
 Sea stars are also less dangerous than lemon sharks, but they are slightly more dangerous than
 anemones, <em>especially</em> when stepped on.
 </p>
-<p><a href="#" class="btn btn-warning">Sidestep</a></p>
+</div>
+<div class="card-footer"><a href="#" class="btn btn-warning">Sidestep</a></div>
 </div>
 </div>
-</div>
-</div>
+<p/>
+
 
 ## Card columns
 
@@ -79,25 +84,29 @@ and using `\[[!inline]]` with `template="simplecard"` to generate the cards.
 <div class="card-columns">
 [[!inline pages="sample_text/* and !*/Discussion" template="simplecard" feeds="no"]]
 </div>
+<p/>
 
 
 ## Carousel
 
 These can be created by writing the outer two carousel `div` elements yourself,
 and using `\[[!inline]]` with `template="carouselpage"` to generate the carousel items.
+However, care must be taken to properly style the contents of the carousel.
+You might want to copy the carouselpage template and edit it to ensure the contents of the carousel have big enough margins.
+You also need to ensure all pages have the same height, or enforce a fixed height for the whole carousel.
+Here is an example with bare text:
 
 <p>
 <div id="carousel-example-pages" class="carousel slide" data-ride="carousel">
-<ol class="carousel-indicators"></ol>
-<div class="carousel-inner" role="listbox">
+<div class="carousel-inner bg-inverse text-white" role="listbox" style="height: 10em">
 [[!inline pages="sample_text/* and !*/Discussion" template="carouselpage" feeds="no"]]
 </div>
-<a class="left carousel-control" href="#carousel-example-pages" role="button" data-slide="prev">
-<span class="icon-prev" aria-hidden="true"></span>
+<a class="carousel-control-prev" href="#carousel-example-pages" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 <span class="sr-only">Previous</span>
 </a>
-<a class="right carousel-control" href="#carousel-example-pages" role="button" data-slide="next">
-<span class="icon-next" aria-hidden="true"></span>
+<a class="carousel-control-next" href="#carousel-example-pages" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
 <span class="sr-only">Next</span>
 </a>
 </div>
@@ -107,15 +116,15 @@ If you only want to show images, use `template="carouselimage"`, and select your
 
 <p>
 <div id="carousel-example-images" class="carousel slide" data-ride="carousel">
-<div class="carousel-inner" role="listbox">
+<div class="carousel-inner bg-inverse" role="listbox" style="height: 480px">
 [[!inline pages="*.jpg" template="carouselimage" feeds="no"]]
 </div>
-<a class="left carousel-control" href="#carousel-example-images" role="button" data-slide="prev">
-<span class="icon-prev" aria-hidden="true"></span>
+<a class="carousel-control-prev" href="#carousel-example-images" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 <span class="sr-only">Previous</span>
 </a>
-<a class="right carousel-control" href="#carousel-example-images" role="button" data-slide="next">
-<span class="icon-next" aria-hidden="true"></span>
+<a class="carousel-control-next" href="#carousel-example-images" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
 <span class="sr-only">Next</span>
 </a>
 </div>
@@ -126,9 +135,9 @@ If you only want to show images, use `template="carouselimage"`, and select your
 Ikistrap also provides a progress directive which works in the same way as the progress plugin,
 but it also allows an extra class to be specified to change the style per bar.
 
-[[!progress  totalpages="* and !*/Discussion" donepages="*/Discussion"]]
-[[!progress percent="33%"]]
-[[!progress percent="66%" class="progress-success progress-striped"]]
+[[!progress totalpages="* and !*/Discussion" donepages="*/Discussion"]]
+[[!progress percent="33%" class="bg-info" height="2em"]]
+[[!progress percent="66%" class="bg-success progress-bar-striped progress-bar-animated" height="3em"]]
 
 ## Other stuff
 
