@@ -2,7 +2,7 @@
 
 [Ikiwiki](https://ikiwiki.info/) is a very powerful [wiki](https://en.wikipedia.org/wiki/Wiki) compiler.
 However, its default theme is very minimalistic.
-Ikistrap is a theme that uses [Bootstrap 4](http://v4-alpha.getbootstrap.com/) to ensure you have a wiki that looks professional,
+Ikistrap is a theme that uses [Bootstrap](http://getbootstrap.com/) 4 to ensure you have a wiki that looks professional,
 whether you are viewing it on your desktop computer or on your mobile phone.
 
 To use ikistrap in your own wiki, just add the following to your setup file:
