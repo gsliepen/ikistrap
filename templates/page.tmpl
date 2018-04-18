@@ -76,7 +76,7 @@
 					<div class="actions">
 						<ul class="navbar-nav">
 							<TMPL_IF EDITURL>
-							<li class="nav-item"><a class="nav-link" href="<TMPL_VAR EDITURL>" rel="nofollow"><i class="fa fa-pencil"></i>Edit</a></li>
+							<li class="nav-item"><a class="nav-link" href="<TMPL_VAR EDITURL>" rel="nofollow"><i class="fa fa-fw fa-pencil"></i>Edit</a></li>
 							</TMPL_IF>
 							<TMPL_IF RECENTCHANGESURL>
 							<li class="nav-item"><a class="nav-link" href="<TMPL_VAR RECENTCHANGESURL>">RecentChanges</a></li>
@@ -88,7 +88,7 @@
 							<li class="nav-item"><a class="nav-link" href="<TMPL_VAR GETSOURCEURL>">Source</a></li>
 							</TMPL_IF>
 							<TMPL_IF PREFSURL>
-							<li class="nav-item"><a class="nav-link" href="<TMPL_VAR PREFSURL>"><i class="fa fa-cog"></i>Preferences</a></li>
+							<li class="nav-item"><a class="nav-link" href="<TMPL_VAR PREFSURL>"><i class="fa fa-fw fa-cog"></i>Preferences</a></li>
 							</TMPL_IF>
 							<TMPL_IF ACTIONS>
 							<TMPL_LOOP ACTIONS>
@@ -180,7 +180,7 @@
 			<TMPL_VAR TRAILS>
 			<TMPL_IF TAGS>
 			<span class="tags">
-				<i class="fa fa-tag"></i>Tags:
+				<i class="fa fa-fw fa-tag"></i>Tags:
 				<TMPL_LOOP TAGS>
 				<TMPL_VAR LINK>
 				</TMPL_LOOP>
@@ -189,7 +189,7 @@
 
 			<TMPL_IF BACKLINKS>
 			<span id="backlinks">
-				<i class="fa fa-link"></i>Links:
+				<i class="fa fa-fw fa-link"></i>Links:
 				<TMPL_LOOP BACKLINKS>
 				<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>
 				</TMPL_LOOP>
