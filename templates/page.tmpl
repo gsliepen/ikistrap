@@ -47,6 +47,13 @@
 		<header id="header">
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 			<div class="container">
+				<TMPL_IF NAME="PARENTLINKS">
+				<TMPL_LOOP NAME="PARENTLINKS">
+				<TMPL_IF NAME="DEPTH_0"><a class="navbar-brand" href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a></TMPL_IF>
+				</TMPL_LOOP>
+				<TMPL_ELSE>
+				<a class="navbar-brand" href="#"><TMPL_VAR TITLE></a>
+				</TMPL_IF>
 				 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#header-nav" aria-controls="header-nav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -54,9 +61,11 @@
 				<div class="collapse navbar-collapse" id="header-nav">
 					<ul class="navbar-nav mr-auto">
 						<TMPL_LOOP NAME="PARENTLINKS">
-						<li class="nav-item <TMPL_UNLESS NAME="DEPTH_0">hidden-md-down</TMPL_UNLESS>"><a class="nav-link" href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a></li>
+						<TMPL_UNLESS NAME="DEPTH_0"><li class="nav-item hidden-md-down"><a class="nav-link" href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a></li></TMPL_UNLESS>
 						</TMPL_LOOP>
-						<li class="nav-item"><a class="nav-link active <TMPL_IF HAS_PARENTLINKS>hidden-md-down</TMPL_IF>" href="#"><TMPL_VAR TITLE><TMPL_IF ISTRANSLATION>&nbsp;(<TMPL_VAR PERCENTTRANSLATED>%)</TMPL_IF></a></li>
+						<TMPL_IF NAME="PARENTLINKS">
+						<li class="nav-item"><a class="nav-link active hidden-md-down" href="#"><TMPL_VAR TITLE><TMPL_IF ISTRANSLATION>&nbsp;(<TMPL_VAR PERCENTTRANSLATED>%)</TMPL_IF></a></li>
+						</TMPL_IF>
 					</ul>
 
 					<TMPL_UNLESS DYNAMIC>
