@@ -54,7 +54,7 @@ sub refresh() {
 	return 0 unless($config{bootstrap_local});
 	mkdir("$config{destdir}/css");
 	mkdir("$config{destdir}/fonts");
-	check("css/bootstrap.min.css", "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css");
+	check("css/bootstrap.min.css", "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css");
 	check("css/font-awesome.min.css", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 	check("fonts/fontawesome-webfont.eot", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot");
 	check("fonts/fontawesome-webfont.woff2", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2");
@@ -65,8 +65,8 @@ sub refresh() {
 	return 0 unless($config{bootstrap_js});
 	mkdir("$config{destdir}/js");
 	check("js/jquery.min.js", "https://code.jquery.com/jquery-3.3.1.slim.min.js");
-	check("js/popper.min.js", "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js");
-	check("js/bootstrap.min.js", "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js");
+	check("js/popper.min.js", "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js");
+	check("js/bootstrap.min.js", "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js");
 }
 
 sub pagetemplate(@) {
