@@ -12,4 +12,6 @@ To use ikistrap in your own wiki, just add the following to your setup file:
 
 Ikistrap comes with an example wiki that shows off its features,
 and shows you how to integrate some Bootstrap 4 features into your `.mdwn` files.
-Use the `Makefile` to compile the example wiki.
+Use the `Makefile` to compile the example wiki.  The example wiki relies on the
+multimarkdown and imagemagick libraries for Perl.  On Debian, these are available
+in the libtext-multimarkdown-perl and perlmagick packages.
