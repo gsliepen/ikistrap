@@ -10,7 +10,7 @@ large for good usability.
 Note that browsers that do not support the CSS will display the popup
 inline in the page, inside square brackets.
 
-[[templatebody <<ENDBODY
+[[!templatebody <<ENDBODY
 <span class="popup"><TMPL_VAR mouseover>
 <span class="paren">[</span><span class="balloon"><TMPL_VAR popup></span><span class="paren">]</span>
 </span>

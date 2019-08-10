@@ -1,7 +1,7 @@
 Some [[directives|ikiwiki/directive]] that use
 [[PageSpecs|ikiwiki/pagespec]] allow
 specifying the order that matching pages are shown in. The following sort
-orders can be specified.
+orders can be specified using the `sort` parameter:
 
 * `age` - List pages from the most recently created to the oldest.
 

@@ -69,6 +69,10 @@ want to combine expression like that; "or" when it's enough for a page to
 match one expression. Note that it doesn't make sense to say "index and
 SandBox", since no page can match both expressions.
 
+If you want to include only one level of subpages, you can use
+
+    blog/* and !blog/*/*
+
 More complex expressions can also be created, by using parentheses for
 grouping. For example, to match pages in a blog that are tagged with either
 of two tags, use:

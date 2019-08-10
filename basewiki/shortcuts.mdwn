@@ -28,6 +28,8 @@ This page controls what shortcut links the wiki supports.
 * [[!shortcut name=debss url="http://snapshot.debian.org/package/%s/"]]
   * Usage: `\[[!debss package]]` or `\[[!debss package/version]]`.  See <http://snapshot.debian.org/> for details.
 * [[!shortcut name=debwiki url="https://wiki.debian.org/%S"]]
+* [[!shortcut name=debcve url="https://security-tracker.debian.org/tracker/%S"]]
+  * also supports Debian bug numbers, packages and whatever the [security tracker](https://security-tracker.debian.org/tracker/) supports.
 * [[!shortcut name=fdobug url="https://bugs.freedesktop.org/show_bug.cgi?id=%s" desc="freedesktop.org bug #%s"]]
 * [[!shortcut name=fdolist url="http://lists.freedesktop.org/mailman/listinfo/%s" desc="%s@lists.freedesktop.org"]]
 * [[!shortcut name=gnomebug url="https://bugzilla.gnome.org/show_bug.cgi?id=%s" desc="GNOME bug #%s"]]
@@ -44,7 +46,7 @@ This page controls what shortcut links the wiki supports.
 * [[!shortcut name=iki url="http://ikiwiki.info/%S/"]]
 * [[!shortcut name=ljuser url="http://%s.livejournal.com/"]]
 * [[!shortcut name=rfc url="https://www.ietf.org/rfc/rfc%s.txt" desc="RFC %s"]]
-* [[!shortcut name=c2 url="http://c2.com/cgi/wiki?%s"]]
+* [[!shortcut name=c2 url="http://wiki.c2.com/?%s"]]
 * [[!shortcut name=meatballwiki url="http://www.usemod.com/cgi-bin/mb.pl?%s"]]
 * [[!shortcut name=emacswiki url="http://www.emacswiki.org/cgi-bin/wiki/%s"]]
 * [[!shortcut name=haskellwiki url="http://haskell.org/haskellwiki/%s"]]
