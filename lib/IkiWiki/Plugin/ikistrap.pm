@@ -55,12 +55,24 @@ sub refresh() {
 	mkdir("$config{destdir}/css");
 	mkdir("$config{destdir}/fonts");
 	check("css/bootstrap.min.css", "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
-	check("css/font-awesome.min.css", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-	check("fonts/fontawesome-webfont.eot", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot");
-	check("fonts/fontawesome-webfont.woff2", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2");
-	check("fonts/fontawesome-webfont.woff", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff");
-	check("fonts/fontawesome-webfont.ttf", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf");
-	check("fonts/fontawesome-webfont.svg", "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg");
+	check("css/fontawesome.min.css", "https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/css/fontawesome.min.css");
+	
+	# A lot of webfonts
+	check("webfonts/fa-brands-400.eot", "https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/webfonts/fa-brands-400.eot");
+	check("webfonts/fa-brands-400.ttf", "https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/webfonts/fa-brands-400.ttf");
+	check("webfonts/fa-brands-400.woff", "https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/webfonts/fa-brands-400.woff");
+	check("webfonts/fa-brands-400.woff2", "https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/webfonts/fa-brands-400.woff2");
+
+	check("webfonts/fa-regular-400.eot", "https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/webfonts/fa-regular-400.eot");
+	check("webfonts/fa-regular-400.ttf", "https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/webfonts/fa-regular-400.ttf");
+	check("webfonts/fa-regular-400.woff", "https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/webfonts/fa-regular-400.woff");
+	check("webfonts/fa-regular-400.woff2", "https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/webfonts/fa-regular-400.woff2");
+
+	check("webfonts/fa-solid-900.eot", "https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/webfonts/fa-solid-900.eot");
+	check("webfonts/fa-solid-900.ttf", "https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/webfonts/fa-solid-900.ttf");
+	check("webfonts/fa-solid-900.woff", "https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/webfonts/fa-solid-900.woff");
+	check("webfonts/fa-solid-900.woff2", "https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/webfonts/fa-solid-900.woff2");
+	# End
 
 	return 0 unless($config{bootstrap_js});
 	mkdir("$config{destdir}/js");
