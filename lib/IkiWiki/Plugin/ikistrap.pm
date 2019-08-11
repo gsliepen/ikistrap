@@ -52,6 +52,7 @@ sub check($$) {
 
 sub refresh() {
 	return 0 unless($config{bootstrap_local});
+	mkdir("$config{destdir}");
 	mkdir("$config{destdir}/css");
 	mkdir("$config{destdir}/webfonts");
 	check("css/bootstrap.min.css", "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
