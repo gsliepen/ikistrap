@@ -55,7 +55,7 @@ sub refresh() {
 	mkdir("$config{destdir}/css");
 	mkdir("$config{destdir}/webfonts");
 	check("css/bootstrap.min.css", "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
-	check("css/fontawesome.min.css", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/css/all.min.css");
+	check("css/font-awesome.min.css", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/css/all.min.css");
 	
 	# A lot of webfonts
 	check("webfonts/fa-brands-400.eot", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/webfonts/fa-brands-400.eot");
