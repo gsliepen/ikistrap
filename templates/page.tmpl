@@ -14,8 +14,7 @@
 	<link rel="stylesheet" href="<TMPL_VAR BASEURL>css/bootstrap.min.css" type="text/css" />
 	<link rel="stylesheet" href="<TMPL_VAR BASEURL>css/font-awesome.min.css" type="text/css" />
 	<TMPL_ELSE>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/css/all.min.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous" type="text/css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 	</TMPL_IF>
 	<link rel="stylesheet" href="<TMPL_VAR BASEURL>style.css" type="text/css" />
 	<TMPL_IF LOCAL_CSS>
@@ -45,8 +44,8 @@
 <body>
 	<div id="notfooter">
 		<header id="header">
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-			<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container-fluid">
 				<TMPL_IF NAME="PARENTLINKS">
 				<TMPL_LOOP NAME="PARENTLINKS">
 				<TMPL_IF NAME="DEPTH_0"><a class="navbar-brand" href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a></TMPL_IF>
@@ -54,12 +53,12 @@
 				<TMPL_ELSE>
 				<a class="navbar-brand" href="#"><TMPL_VAR TITLE></a>
 				</TMPL_IF>
-				 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#header-nav" aria-controls="header-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<div class="collapse navbar-collapse" id="header-nav">
-					<ul class="navbar-nav mr-auto">
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<TMPL_LOOP NAME="PARENTLINKS">
 						<TMPL_UNLESS NAME="DEPTH_0"><li class="nav-item hidden-md-down"><a class="nav-link" href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a></li></TMPL_UNLESS>
 						</TMPL_LOOP>
@@ -231,9 +230,7 @@
 	<script src="<TMPL_VAR BASEURL>js/tether.min.js"></script>
 	<script src="<TMPL_VAR BASEURL>js/bootstrap.min.js"></script>
 	<TMPL_ELSE>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 	</TMPL_IF>
 	</TMPL_IF>
 </body>

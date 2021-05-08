@@ -266,7 +266,7 @@ comments_commit: 1
 comments_allowformats: ''
 
 # ikistrap plugin
-# Install Bootstrap css and js files locally instead of using bootstrapcdn?
+# Install Bootstrap css and js files locally instead of using jsDelivr?
 #bootstrap_local: 0
 # Load Bootstrap's Javascript helpers?
 #bootstrap_js: 1

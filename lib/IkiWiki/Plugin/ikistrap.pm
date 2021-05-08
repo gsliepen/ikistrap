@@ -22,12 +22,12 @@ sub checkconfig() {
 sub getsetup() {
 	return
 		plugin => {
-			description => "Bootstrap 4 theme support",
+			description => "Bootstrap 5 theme support",
 			section => "web",
 			safe => 1,
 		},
 		bootstrap_local => {
-			description => "Install Bootstrap css and js files locally instead of using bootstrapcdn?",
+			description => "Install Bootstrap css and js files locally instead of using jsDelivr?",
 			example => 0,
 			type => "boolean",
 			default => 0,
@@ -53,33 +53,17 @@ sub check($$) {
 sub refresh() {
 	return 0 unless($config{bootstrap_local});
 	mkdir("$config{destdir}");
-	mkdir("$config{destdir}/css");
 	mkdir("$config{destdir}/webfonts");
-	check("css/bootstrap.min.css", "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
-	check("css/font-awesome.min.css", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/css/all.min.css");
-	
-	# A lot of webfonts
-	check("webfonts/fa-brands-400.eot", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/webfonts/fa-brands-400.eot");
-	check("webfonts/fa-brands-400.ttf", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/webfonts/fa-brands-400.ttf");
-	check("webfonts/fa-brands-400.woff", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/webfonts/fa-brands-400.woff");
-	check("webfonts/fa-brands-400.woff2", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/webfonts/fa-brands-400.woff2");
 
-	check("webfonts/fa-regular-400.eot", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/webfonts/fa-regular-400.eot");
-	check("webfonts/fa-regular-400.ttf", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/webfonts/fa-regular-400.ttf");
-	check("webfonts/fa-regular-400.woff", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/webfonts/fa-regular-400.woff");
-	check("webfonts/fa-regular-400.woff2", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/webfonts/fa-regular-400.woff2");
+	# CSS
+	mkdir("$config{destdir}/css");
+	check("css/bootstrap.min.css", "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css");
+        check("css/bootstrap-icons.css", "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css");
 
-	check("webfonts/fa-solid-900.eot", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/webfonts/fa-solid-900.eot");
-	check("webfonts/fa-solid-900.ttf", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/webfonts/fa-solid-900.ttf");
-	check("webfonts/fa-solid-900.woff", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/webfonts/fa-solid-900.woff");
-	check("webfonts/fa-solid-900.woff2", "https://unpkg.com/\@fortawesome/fontawesome-free\@5.10.1/webfonts/fa-solid-900.woff2");
-	# End
-
+	# JavaScript (if enabled)
 	return 0 unless($config{bootstrap_js});
 	mkdir("$config{destdir}/js");
-	check("js/jquery.min.js", "https://code.jquery.com/jquery-3.3.1.slim.min.js");
-	check("js/popper.min.js", "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js");
-	check("js/bootstrap.min.js", "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js");
+	check("js/bootstrap.bundle.min.js", "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js");
 }
 
 sub pagetemplate(@) {

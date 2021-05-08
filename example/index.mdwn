@@ -2,7 +2,7 @@
 
 This is an example wiki to show off the ikistrap theme.
 Ikistrap tries to provide a fully-featured, modern looking HTML5 theme for ikiwiki.
-It uses Bootstrap 4 and Fonts Awesome.
+It uses Bootstrap 5 and Bootstrap Icons.
 
 ## Features
 
@@ -13,9 +13,9 @@ Ikistrap has the following features:
 * Standards-compliant.
 * Compatible with text-only browsers.
 * Header supporting parentlinks, wiki actions, search form, language selection and trails.
-* Sidebar styled as a Boostrap 4 card, using the Bootstrap 4 grid system.
+* Sidebar styled as a Boostrap 5 card, using the Bootstrap 5 grid system.
 * Footer that is pushed down to the bottom of the screen with tags, backlinks, copyright, license and modification date.
-* [[Inline pages]] that are by default styled as Bootstrap 4 cards.
+* [[Inline pages]] that are by default styled as Bootstrap 5 cards.
 * [[Comments]]
 * [[Calendars]]
 
