@@ -53,12 +53,15 @@ sub check($$) {
 sub refresh() {
 	return 0 unless($config{bootstrap_local});
 	mkdir("$config{destdir}");
-	mkdir("$config{destdir}/webfonts");
 
 	# CSS
 	mkdir("$config{destdir}/css");
 	check("css/bootstrap.min.css", "https://cdn.jsdelivr.net/npm/bootstrap\@5.0.0/dist/css/bootstrap.min.css");
         check("css/bootstrap-icons.css", "https://cdn.jsdelivr.net/npm/bootstrap-icons\@1.4.1/font/bootstrap-icons.css");
+
+	# Fonts
+	mkdir("$config{destdir}/css/fonts");
+	check("css/fonts/bootstrap-icons.woff2", "https://cdn.jsdelivr.net/npm/bootstrap-icons\@1.4.1/font/fonts/bootstrap-icons.woff2");
 
 	# JavaScript (if enabled)
 	return 0 unless($config{bootstrap_js});
