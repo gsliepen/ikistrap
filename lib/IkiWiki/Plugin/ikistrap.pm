@@ -57,13 +57,13 @@ sub refresh() {
 
 	# CSS
 	mkdir("$config{destdir}/css");
-	check("css/bootstrap.min.css", "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css");
-        check("css/bootstrap-icons.css", "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css");
+	check("css/bootstrap.min.css", "https://cdn.jsdelivr.net/npm/bootstrap\@5.0.0/dist/css/bootstrap.min.css");
+        check("css/bootstrap-icons.css", "https://cdn.jsdelivr.net/npm/bootstrap-icons\@1.4.1/font/bootstrap-icons.css");
 
 	# JavaScript (if enabled)
 	return 0 unless($config{bootstrap_js});
 	mkdir("$config{destdir}/js");
-	check("js/bootstrap.bundle.min.js", "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js");
+	check("js/bootstrap.bundle.min.js", "https://cdn.jsdelivr.net/npm/bootstrap\@5.0.0/dist/js/bootstrap.bundle.min.js");
 }
 
 sub pagetemplate(@) {
