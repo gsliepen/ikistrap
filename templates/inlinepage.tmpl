@@ -12,7 +12,7 @@
 		<div class="inline-actions">
 			<ul>
 				<TMPL_IF EDITURL>
-				<li><a href="<TMPL_VAR EDITURL>" rel="nofollow"><i class="fa fa-fw fa-edit"></i>Edit</a></li>
+				<li><a href="<TMPL_VAR EDITURL>" rel="nofollow"><i class="bi bi-pencil"> </i>Edit</a></li>
 				</TMPL_IF>
 				<TMPL_IF COMMENTSLINK>
 				<li><TMPL_VAR COMMENTSLINK></li>
@@ -67,7 +67,7 @@
 
 		<TMPL_IF TAGS>
 		<nav class="tags">
-			<i class="fa fa-fw fa-tag"></i>Tags:
+			<i class="bi bi-tag"> </i>Tags:
 			<TMPL_LOOP TAGS>
 			<TMPL_VAR LINK>
 			</TMPL_LOOP>

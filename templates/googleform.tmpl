@@ -1,4 +1,7 @@
-<form method="get" action="https://www.google.com/search" id="searchform" class="form-inline">
-	<input name="sitesearch" value="<TMPL_VAR URL>" type="hidden" />
-	<input name="q" value="" id="searchbox" size="12" type="text" placeholder="Search…" class="form-control" />
+<form method="get" action="https://www.google.com/search" id="searchform">
+	<div class="input-group">
+		<input name="sitesearch" value="<TMPL_VAR URL>" type="hidden" />
+		<input name="q" value="" id="searchbox" size="12" type="text" placeholder="Search…" class="form-control" />
+		<button type="submit" class="btn btn-secondary"><i class="bi bi-search"></i></button>
+	</div>
 </form>
