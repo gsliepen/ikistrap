@@ -167,7 +167,7 @@ table tr:last-child td:last-child {
 	margin: auto;
 }
 
-/* Bootstrap 4 forgot to define a blockquote style? */
+/* Improve the Bootstrap blockquote style */
 blockquote {
 	border-left: 4px solid rgba(0,0,0,.1);
 	padding-left: 0.5em;
@@ -177,4 +177,72 @@ blockquote {
 .card-img-top, .card-img-bottom {
 	width: 100%;
 	height: auto;
+}
+
+/* Dark mode */
+@media only screen and (prefers-color-scheme: dark) {
+body {
+	background-color: #000;
+	color: #aaa;
+}
+
+.bg-light, #header {
+	background-color: #333 !important;
+	border-color: #666;
+}
+
+.card {
+	background-color: #000 !important;
+	border-color: #666;
+}
+
+table, tbody {
+	background-color: inherit;
+}
+
+table td, table th, #footer {
+	border-color: #666;
+}
+
+blockquote {
+	border-color: #444;
+}
+
+.card-header, #searchbox {
+	background-color: #222;
+	border-color: #666;
+}
+
+#searchform button {
+	background-color: #666;
+	border-color: #666;
+}
+
+#searchbox {
+	color: #aaa;
+}
+
+.text-body {
+	color: #aaa !important;
+}
+
+a {
+	color: #5ae;
+}
+
+a:hover {
+	color: #48d;
+}
+
+table tr:hover {
+	background-color: #111;
+}
+
+thead th {
+	background-color: #222;
+	color: #ccc;
+}
+
+.navbar-toggler img {
+	filter: invert(1);
 }
