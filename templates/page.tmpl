@@ -42,7 +42,7 @@
 	</TMPL_UNLESS>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 	<div id="notfooter">
 		<header id="header">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -174,9 +174,9 @@
 		</div>
 	</div>
 
-	<footer id="footer" class="container">
+	<footer id="footer" class="mt-auto">
+		<nav id="pageinfo" class="container navbar text-muted">
 		<TMPL_UNLESS DYNAMIC>
-		<nav id="pageinfo">
 			<TMPL_VAR TRAILS>
 			<TMPL_IF TAGS>
 			<span class="tags">
@@ -220,9 +220,9 @@
 			<span id="pagedate">
 				Last edited <TMPL_VAR MTIME>.
 			</span>
-		</nav>
 		<TMPL_IF EXTRAFOOTER><TMPL_VAR EXTRAFOOTER></TMPL_IF>
 		</TMPL_UNLESS>
+		</nav>
 	</footer>
 
 	<TMPL_IF BOOTSTRAP_JS>

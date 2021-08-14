@@ -3,22 +3,11 @@
 	margin-bottom: 1em;
 }
 
-/* Ensure the footer is pushed down to the bottom of the screen,
- * if the main content doesn't fill it. */
-body, html {
-	height: 100%;
-}
-
-#notfooter {
-	min-height: 100%;
-	padding-bottom: 2em;
+#header {
+	border-bottom: 1px solid lightgrey;
 }
 
 #footer {
-	position: relative;
-	margin-top: -2em;
-	height: 2em;
-	color: grey;
 	border-top: 1px solid lightgrey;
 }
 
